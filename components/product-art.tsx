@@ -20,44 +20,45 @@ const CDN = "https://d8j0ntlcm91z4.cloudfront.net/user_3DZsX8XjGmMqL9IN6t2ItqOSe
 
 /**
  * Product images: [hero, lifestyle 1, lifestyle 2].
- * Hero shots generated 23 Aug; lifestyle shots generated 24 Aug 2026.
+ * Hero shots generated 23 Aug; lifestyle shots re-generated 24 Aug 2026
+ * with hero-image references for product consistency.
  * All via Higgsfield marketing_studio_image, 4:5.
  */
 const productImages: Record<string, string[]> = {
   "veylo-wand": [
     `${CDN}/hf_20260823_175045_1485ed57-f4b8-4a93-a36e-91e2960359d3.png`,
-    `${CDN}/hf_20260824_154102_ebd94bc6-6b82-45bb-9721-6b60bc509bab.png`,
-    `${CDN}/hf_20260824_154714_227de572-fabd-4bd7-b878-bb6b2239a4aa.png`,
+    `${CDN}/hf_20260824_184915_8add347d-ec7c-4d7e-bef0-12d46b6e969d.png`,
+    `${CDN}/hf_20260824_184915_efa8ab87-a0be-4312-89bb-46ac8a09f393.png`,
   ],
   "lumen-mask": [
     `${CDN}/hf_20260823_175045_a02b71d8-5e87-4474-89d9-edc7872668f7.png`,
-    `${CDN}/hf_20260824_154102_3bcc9d71-00b4-4e37-95ed-88ef16ddff81.png`,
-    `${CDN}/hf_20260824_154102_4e4df14d-acc6-4ba8-b555-70cb9374c5c8.png`,
+    `${CDN}/hf_20260824_184915_9f425f23-4dd4-4e80-b93c-d805a03e93b2.png`,
+    `${CDN}/hf_20260824_184916_0c63ed19-757d-4a64-9c48-ac755c3a901c.png`,
   ],
   "cool-roller": [
     `${CDN}/hf_20260823_175045_96a00a93-6b86-4953-8017-ebca810f5c8a.png`,
-    `${CDN}/hf_20260824_154102_f34236c0-79c2-445d-b698-02e735b0f9b0.png`,
-    `${CDN}/hf_20260824_154102_ae12bf18-d000-4c94-8372-67437f9904de.png`,
+    `${CDN}/hf_20260824_184915_3f87370f-7ecc-4c3e-a57f-7e997192c460.png`,
+    `${CDN}/hf_20260824_184915_d4a90388-e961-4daf-9825-e42b763f8c9c.png`,
   ],
   "sculpt-set": [
     `${CDN}/hf_20260823_175045_ca4479d6-71b1-4f82-9562-c92e6186d9a3.png`,
-    `${CDN}/hf_20260824_154102_4ace0697-1965-4757-a0f8-65093320083e.png`,
-    `${CDN}/hf_20260824_154102_116fd246-e4e7-4bfe-896d-2c89e010548e.png`,
+    `${CDN}/hf_20260824_184915_920901a2-15db-411a-b8d6-34619ba9d3e5.png`,
+    `${CDN}/hf_20260824_184915_f7758454-47b8-4b03-ad22-d486c0bb011e.png`,
   ],
   "glow-ritual": [
-    "/products/glow-ritual.png",
-    `${CDN}/hf_20260824_154102_9914c080-134e-4573-b656-f61ac41cbff1.png`,
-    `${CDN}/hf_20260824_154102_3e69531d-e24c-4d5c-9435-ae7607622b7f.png`,
+    `${CDN}/hf_20260823_175045_1485ed57-f4b8-4a93-a36e-91e2960359d3.png`,
+    `${CDN}/hf_20260824_184915_8add347d-ec7c-4d7e-bef0-12d46b6e969d.png`,
+    `${CDN}/hf_20260824_184915_3f87370f-7ecc-4c3e-a57f-7e997192c460.png`,
   ],
   "relief-belt": [
     `${CDN}/hf_20260824_144031_6bcddcea-237c-4692-ba62-e30c22c1fc68.png`,
-    `${CDN}/hf_20260824_154102_b9dd8c95-1c8b-466f-af48-98765afac496.png`,
-    `${CDN}/hf_20260824_154102_84c0e78a-cffc-45fe-a008-c945f84ea991.png`,
+    `${CDN}/hf_20260824_185029_88bfbe77-6578-4dd2-a331-0987c17f9759.png`,
+    `${CDN}/hf_20260824_185029_42b49c06-05f6-48f5-89a7-494fadcc52e7.png`,
   ],
   "relief-ritual": [
     `${CDN}/hf_20260824_144031_6bcddcea-237c-4692-ba62-e30c22c1fc68.png`,
-    `${CDN}/hf_20260824_154714_7ea1dcfc-5d7a-4188-9547-231e97eb2791.png`,
-    `${CDN}/hf_20260824_154714_5bc138b4-5d8a-4fe9-a3ce-e01f200f4a0b.png`,
+    `${CDN}/hf_20260824_184915_efa8ab87-a0be-4312-89bb-46ac8a09f393.png`,
+    `${CDN}/hf_20260824_185029_88bfbe77-6578-4dd2-a331-0987c17f9759.png`,
   ],
 };
 
