@@ -1,0 +1,340 @@
+<title>Veylo Creative Brief</title>
+<style>
+  :root {
+    --bg: #faf9f7;
+    --card: #ffffff;
+    --text: #1a1a1a;
+    --muted: #6b6b6b;
+    --accent: #c4453c;
+    --border: #e8e5e0;
+    --tag-bg: #f3f0ec;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1a1917;
+      --card: #242320;
+      --text: #e8e5e0;
+      --muted: #9a9590;
+      --accent: #e06b62;
+      --border: #3a3835;
+      --tag-bg: #2e2d2a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1a1917;
+    --card: #242320;
+    --text: #e8e5e0;
+    --muted: #9a9590;
+    --accent: #e06b62;
+    --border: #3a3835;
+    --tag-bg: #2e2d2a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    padding: 2rem 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.3rem; }
+  .subtitle { color: var(--muted); margin-bottom: 2rem; font-size: 0.95rem; }
+  .section-title { font-size: 1.3rem; font-weight: 600; margin: 2.5rem 0 1rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.4rem; }
+  .creative-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  .creative-header {
+    display: flex;
+    gap: 1.2rem;
+    padding: 1.2rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .creative-img {
+    width: 220px;
+    min-width: 220px;
+    aspect-ratio: 4/5;
+    border-radius: 8px;
+    object-fit: cover;
+    background: var(--tag-bg);
+  }
+  .creative-meta { flex: 1; min-width: 280px; }
+  .creative-name { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; }
+  .tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.8rem; }
+  .tag {
+    background: var(--tag-bg);
+    color: var(--muted);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .tag.audience { background: var(--accent); color: #fff; }
+  .hook-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; margin-bottom: 0.2rem; }
+  .hook-text { font-size: 1.3rem; font-weight: 700; line-height: 1.3; margin-bottom: 1rem; color: var(--accent); }
+  .copy-section { padding: 1.2rem; border-top: 1px solid var(--border); }
+  .copy-section h4 { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem; }
+  .copy-section p { margin-bottom: 1rem; font-size: 0.95rem; }
+  .copy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  @media (max-width: 600px) { .copy-grid { grid-template-columns: 1fr; } .creative-img { width: 100%; } }
+  .headline-box {
+    background: var(--tag-bg);
+    padding: 0.6rem 0.8rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .summary-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+  }
+  .summary-card .num { font-size: 2rem; font-weight: 700; color: var(--accent); }
+  .summary-card .label { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+  .campaign-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    overflow-x: auto;
+    display: block;
+  }
+  .campaign-table th, .campaign-table td {
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  .campaign-table th {
+    background: var(--tag-bg);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    font-weight: 600;
+  }
+</style>
+
+<h1>Veylo Skin — Meta Ads Creative Brief</h1>
+<p class="subtitle">Launch week creatives &middot; 5 ads across 2 products &middot; Ads live Thursday 27 Aug</p>
+
+<div class="summary-grid">
+  <div class="summary-card"><div class="num">5</div><div class="label">Ad Creatives</div></div>
+  <div class="summary-card"><div class="num">3</div><div class="label">Audience Segments</div></div>
+  <div class="summary-card"><div class="num">2</div><div class="label">Products</div></div>
+  <div class="summary-card"><div class="num">£20/day</div><div class="label">Test Budget</div></div>
+</div>
+
+<h2 class="section-title">Campaign Structure</h2>
+<div style="overflow-x:auto">
+<table class="campaign-table">
+  <thead>
+    <tr><th>Campaign</th><th>Ad Set</th><th>Audience</th><th>Budget</th><th>Objective</th></tr>
+  </thead>
+  <tbody>
+    <tr><td rowspan="3"><strong>Veylo Launch — CBO</strong></td><td>Skin &amp; Aging — Broad</td><td>Women 30-55, UK, interests: skincare, anti-aging, beauty devices</td><td rowspan="3">£20/day CBO</td><td rowspan="3">Sales (Purchase)</td></tr>
+    <tr><td>Pain Relief — Broad</td><td>Adults 35-65, UK, interests: pain relief, physiotherapy, joint pain, back pain</td></tr>
+    <tr><td>Recovery — Fitness</td><td>Adults 25-45, UK, interests: gym, CrossFit, running, recovery, muscle soreness</td></tr>
+  </tbody>
+</table>
+</div>
+
+<!-- CREATIVE 1 -->
+<h2 class="section-title">Wand Creatives (Skin &amp; Aging)</h2>
+
+<div class="creative-card">
+  <div class="creative-header">
+    <img class="creative-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3DZsX8XjGmMqL9IN6t2ItqOSeH9/hf_20260824_144836_20d6148d-5270-431f-adda-c588994dca91.png" alt="Wand Ad 1">
+    <div class="creative-meta">
+      <div class="creative-name">Ad 1 — Price Anchor</div>
+      <div class="tags">
+        <span class="tag audience">Skin &amp; Aging</span>
+        <span class="tag">Wand</span>
+        <span class="tag">Problem Aware</span>
+      </div>
+      <div class="hook-label">Hook</div>
+      <div class="hook-text">Your £150 facial, for £49.99.</div>
+      <p style="color:var(--muted);font-size:0.9rem">Lifestyle scene — woman using wand in bathroom, golden evening light. Anchors the price against salon facials to make £49.99 feel like a steal.</p>
+    </div>
+  </div>
+  <div class="copy-section">
+    <h4>Primary Text</h4>
+    <p>One salon facial: £150.<br>The Veylo Wand: £49.99 — and it works every single evening.<br><br>Red light therapy, microcurrent, warmth and massage in one five-minute ritual. No appointments, no subscriptions, no monthly spend.<br><br>Women across the UK are replacing their monthly facials with this. Skin looks brighter within weeks. Fine lines start to soften. And the whole thing takes less time than making a cup of tea.<br><br>Free tracked UK delivery. 30-day money-back guarantee.</p>
+    <div class="copy-grid">
+      <div>
+        <h4>Headline</h4>
+        <div class="headline-box">The £49.99 Facial That Never Runs Out</div>
+      </div>
+      <div>
+        <h4>Description</h4>
+        <div class="headline-box">4-in-1 red light therapy wand. 5 minutes a day. Free UK delivery.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="creative-card">
+  <div class="creative-header">
+    <img class="creative-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3DZsX8XjGmMqL9IN6t2ItqOSeH9/hf_20260824_144836_b6ea96e8-0930-4888-aebd-1c9b0e907f7c.png" alt="Wand Ad 2">
+    <div class="creative-meta">
+      <div class="creative-name">Ad 2 — Timeline</div>
+      <div class="tags">
+        <span class="tag audience">Skin &amp; Aging</span>
+        <span class="tag">Wand</span>
+        <span class="tag">Solution Aware</span>
+      </div>
+      <div class="hook-label">Hook</div>
+      <div class="hook-text">Brighter skin in weeks, not months.</div>
+      <p style="color:var(--muted);font-size:0.9rem">Close-up beauty shot — dewy skin, soft red glow from device. Speaks to impatience with slow skincare results.</p>
+    </div>
+  </div>
+  <div class="copy-section">
+    <h4>Primary Text</h4>
+    <p>Most skincare takes months before you notice anything. You just keep buying bottles and hoping.<br><br>The Veylo Wand works differently. 660nm red light paired with microcurrent, warmth and sonic massage — four professional treatments in one five-minute ritual.<br><br>Within weeks, your skin looks brighter. Fine lines look softer. That tired, dull look starts to lift.<br><br>No serums to layer. No 12-step routine. Just five minutes before bed.<br><br>£49.99 with free tracked UK delivery.</p>
+    <div class="copy-grid">
+      <div>
+        <h4>Headline</h4>
+        <div class="headline-box">5 Minutes a Day. Brighter Skin in Weeks.</div>
+      </div>
+      <div>
+        <h4>Description</h4>
+        <div class="headline-box">Red light + microcurrent + warmth + massage. One device, one ritual.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="creative-card">
+  <div class="creative-header">
+    <img class="creative-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3DZsX8XjGmMqL9IN6t2ItqOSeH9/hf_20260824_144836_ffe6222a-9da7-4d4c-9a71-fe290923a602.png" alt="Wand Ad 3">
+    <div class="creative-meta">
+      <div class="creative-name">Ad 3 — Ritual Simplicity</div>
+      <div class="tags">
+        <span class="tag audience">Skin &amp; Aging</span>
+        <span class="tag">Wand</span>
+        <span class="tag">Unaware / Broad</span>
+      </div>
+      <div class="hook-label">Hook</div>
+      <div class="hook-text">The 5-Minute Evening Ritual</div>
+      <p style="color:var(--muted);font-size:0.9rem">Flat lay product shot — marble, linen, amber serum. Positions the wand as a luxury ritual, not a gadget. Broad appeal creative.</p>
+    </div>
+  </div>
+  <div class="copy-section">
+    <h4>Primary Text</h4>
+    <p>Your new evening ritual takes five minutes.<br><br>Cleanse. Glide the Veylo Wand across your face. Follow with your favourite serum. Done.<br><br>Inside that quiet five minutes: red light therapy to brighten, microcurrent to tone, gentle warmth to boost absorption, and sonic massage to release the tension from the day.<br><br>No appointment needed. No complicated routine. Just one beautiful device that replaces four separate steps.<br><br>Rechargeable. USB-C. Lasts two weeks per charge.<br><br>£49.99 &middot; Free UK delivery &middot; 30-day guarantee</p>
+    <div class="copy-grid">
+      <div>
+        <h4>Headline</h4>
+        <div class="headline-box">Four Treatments. One Wand. Five Minutes.</div>
+      </div>
+      <div>
+        <h4>Description</h4>
+        <div class="headline-box">Red light, microcurrent, warmth and massage — the Veylo Wand.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BELT CREATIVES -->
+<h2 class="section-title">Belt Creatives (Pain &amp; Recovery)</h2>
+
+<div class="creative-card">
+  <div class="creative-header">
+    <img class="creative-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3DZsX8XjGmMqL9IN6t2ItqOSeH9/hf_20260824_144836_a5e930e1-459a-4c51-bd6c-39eadcd41ed7.png" alt="Belt Ad 1">
+    <div class="creative-meta">
+      <div class="creative-name">Ad 4 — NHS Frustration</div>
+      <div class="tags">
+        <span class="tag audience">Pain Relief</span>
+        <span class="tag">Belt</span>
+        <span class="tag">Problem Aware</span>
+      </div>
+      <div class="hook-label">Hook</div>
+      <div class="hook-text">Still waiting for pain relief?</div>
+      <p style="color:var(--muted);font-size:0.9rem">Lifestyle — person wrapping belt around lower back on sofa. Warm, relatable UK living room. Taps into NHS waiting list frustration.</p>
+    </div>
+  </div>
+  <div class="copy-section">
+    <h4>Primary Text</h4>
+    <p>8 weeks for a physio appointment. Another 8 for an MRI. Meanwhile, your back still hurts every morning.<br><br>The Veylo Relief Belt wraps 120 LEDs of red and near-infrared light around wherever it hurts — back, knee, shoulder, hip. Twenty minutes on the sofa and muscles feel looser, joints feel less stiff.<br><br>No pills. No appointments. No waiting list.<br><br>Just plug in, wrap it on, and let the infrared do the work. The same wavelengths used in professional physiotherapy clinics.<br><br>£69.99 &middot; UK plug &middot; Free tracked delivery</p>
+    <div class="copy-grid">
+      <div>
+        <h4>Headline</h4>
+        <div class="headline-box">20 Minutes. No Pills. No Waiting List.</div>
+      </div>
+      <div>
+        <h4>Description</h4>
+        <div class="headline-box">120-LED infrared therapy belt. Wraps around back, knee, shoulder or hip.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="creative-card">
+  <div class="creative-header">
+    <img class="creative-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3DZsX8XjGmMqL9IN6t2ItqOSeH9/hf_20260824_144836_e04fd9f1-2518-4a57-8baf-7f265f026cb2.png" alt="Belt Ad 2">
+    <div class="creative-meta">
+      <div class="creative-name">Ad 5 — Recovery</div>
+      <div class="tags">
+        <span class="tag audience">Recovery / Fitness</span>
+        <span class="tag">Belt</span>
+        <span class="tag">Solution Aware</span>
+      </div>
+      <div class="hook-label">Hook</div>
+      <div class="hook-text">Recover like a pro athlete.</div>
+      <p style="color:var(--muted);font-size:0.9rem">Athletic setting — belt wrapped around knee post-workout. Recovery lifestyle imagery for gym-going audience.</p>
+    </div>
+  </div>
+  <div class="copy-section">
+    <h4>Primary Text</h4>
+    <p>Premier League physio rooms use red and near-infrared light therapy. Now you can use the same wavelengths at home.<br><br>The Veylo Relief Belt wraps 120 LEDs around your knee, back, shoulder or hip. Twenty minutes after training and DOMS eases faster, joints feel looser, and you're ready for the next session sooner.<br><br>Cheaper than a single sports massage. Works every day. Fits in your gym bag.<br><br>If your massage gun isn't cutting it, this is the upgrade.<br><br>£69.99 &middot; UK plug &middot; Free tracked delivery</p>
+    <div class="copy-grid">
+      <div>
+        <h4>Headline</h4>
+        <div class="headline-box">Pro-Level Recovery. £69.99. No Physio Needed.</div>
+      </div>
+      <div>
+        <h4>Description</h4>
+        <div class="headline-box">660nm red + 850nm near-infrared. 120 LEDs. 20-minute sessions.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LAUNCH PLAN -->
+<h2 class="section-title">Launch Sequence</h2>
+<div style="overflow-x:auto">
+<table class="campaign-table">
+  <thead>
+    <tr><th>Phase</th><th>Timing</th><th>Action</th><th>Kill Rule</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Test</strong></td><td>Thu 27 – Sun 30 Aug</td><td>All 5 ads live, £20/day CBO across 3 ad sets. Let Meta optimise.</td><td>Kill any ad with CTR &lt; 1% after £10 spend</td></tr>
+    <tr><td><strong>Learn</strong></td><td>Mon 1 – Wed 3 Sep</td><td>Pause losers. Double down on top 2 creatives. Add 1 new variation of the winner.</td><td>Kill ad sets with CPA &gt; 2× target (£25+)</td></tr>
+    <tr><td><strong>Scale</strong></td><td>Thu 4 Sep+</td><td>Scale winning ad set by 20%/day. Add lookalike audiences from site visitors.</td><td>Scale only if ROAS &gt; 2×</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2 class="section-title">Key Metrics</h2>
+<div class="summary-grid">
+  <div class="summary-card"><div class="num">&lt;£12.50</div><div class="label">Target CPA (Wand)</div></div>
+  <div class="summary-card"><div class="num">&lt;£17.50</div><div class="label">Target CPA (Belt)</div></div>
+  <div class="summary-card"><div class="num">&gt;1.5%</div><div class="label">Min CTR</div></div>
+  <div class="summary-card"><div class="num">&gt;2×</div><div class="label">Target ROAS</div></div>
+</div>
+
+<p style="color:var(--muted);font-size:0.85rem;margin-top:2rem;text-align:center">Veylo Skin &middot; veyloskin.com &middot; Creative brief generated 24 Aug 2026</p>

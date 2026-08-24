@@ -154,6 +154,7 @@ export const products: Product[] = [
     slug: "glow-ritual",
     name: "The Glow Ritual",
     tagline: "Wand + Cool Roller",
+    image: "https://d8j0ntlcm91z4.cloudfront.net/user_3DZsX8XjGmMqL9IN6t2ItqOSeH9/hf_20260824_154102_9914c080-134e-4573-b656-f61ac41cbff1.png",
     strapline: "The Veylo Wand and the Cool Roller, boxed together as one ritual.",
     description:
       "The complete Veylo ritual in one box: the Cool Roller for calmer-looking mornings and the Veylo Wand for five focused minutes at night. Bought together, the set saves £5 on the separate prices.",
@@ -210,6 +211,7 @@ export const products: Product[] = [
     slug: "relief-ritual",
     name: "The Relief Ritual",
     tagline: "Wand + Belt",
+    image: "https://d8j0ntlcm91z4.cloudfront.net/user_3DZsX8XjGmMqL9IN6t2ItqOSeH9/hf_20260824_154714_7ea1dcfc-5d7a-4188-9547-231e97eb2791.png",
     strapline: "The Veylo Wand for your face and the Relief Belt for your body — one morning-and-evening ritual.",
     description:
       "Face and body in one box: the Veylo Wand for a five-minute facial and the Relief Belt for twenty minutes of infrared therapy on sore muscles and joints. Together, the set saves £15 on the separate prices.",
