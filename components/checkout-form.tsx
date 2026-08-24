@@ -6,12 +6,14 @@ import { EmbeddedCheckoutProvider, EmbeddedCheckout } from "@stripe/react-stripe
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { useStore } from "./store-provider";
+import { useCookieConsent } from "./cookie-consent";
 import { trackBeginCheckout } from "@/lib/tracking";
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
 export function CheckoutForm() {
   const { items, subtotal } = useStore();
+  const { consent } = useCookieConsent();
   const tracked = useRef(false);
 
   useEffect(() => {
@@ -22,6 +24,15 @@ export function CheckoutForm() {
   }, [items, subtotal]);
 
   const fetchClientSecret = useCallback(async () => {
+    const readCookie = (name: string) => {
+      const prefix = `${name}=`;
+      const value = document.cookie
+        .split(";")
+        .map((entry) => entry.trim())
+        .find((entry) => entry.startsWith(prefix));
+      return value ? decodeURIComponent(value.slice(prefix.length)) : undefined;
+    };
+
     const response = await fetch("/api/checkout", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -32,12 +43,22 @@ export function CheckoutForm() {
           finish: item.finish,
           quantity: item.quantity,
         })),
+        metaTracking: {
+          consent: consent === "accepted",
+          fbp: consent === "accepted" ? readCookie("_fbp") : undefined,
+          fbc: consent === "accepted" ? readCookie("_fbc") : undefined,
+        },
       }),
     });
 
-    const { clientSecret } = await response.json();
+    const data = await response.json();
+    if (!response.ok || !data.clientSecret) {
+      throw new Error(data.error ?? "Unable to start checkout");
+    }
+
+    const { clientSecret } = data;
     return clientSecret;
-  }, [items]);
+  }, [consent, items]);
 
   if (!items.length) {
     return (

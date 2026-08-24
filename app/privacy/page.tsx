@@ -48,6 +48,7 @@ export default function PrivacyPage() {
           <p>We share personal data only where necessary:</p>
           <ul>
             <li><strong>Stripe:</strong> payment processing. Stripe acts as an independent controller. See <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer">Stripe&apos;s privacy policy</a></li>
+            <li><strong>Meta:</strong> advertising measurement where you have accepted advertising cookies. Purchase details and identifiers are sent securely through the Meta Pixel and Conversions API to attribute sales and improve advertising</li>
             <li><strong>Delivery carriers:</strong> name and address to fulfil delivery</li>
             <li><strong>Vercel:</strong> website hosting</li>
             <li><strong>Zoho:</strong> email services</li>

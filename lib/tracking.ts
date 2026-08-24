@@ -98,10 +98,15 @@ export function trackBeginCheckout(value: number, items: TrackingItem[]) {
 }
 
 export function trackPurchase(value: number, transactionId?: string) {
-  window.fbq?.("track", "Purchase", {
-    value,
-    currency: "GBP",
-  });
+  window.fbq?.(
+    "track",
+    "Purchase",
+    {
+      value,
+      currency: "GBP",
+    },
+    transactionId ? { eventID: transactionId } : undefined,
+  );
 
   window.ttq?.track("CompletePayment", {
     value,

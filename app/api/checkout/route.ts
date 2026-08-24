@@ -11,8 +11,22 @@ type CartItem = {
   quantity: number;
 };
 
+type MetaTracking = {
+  consent?: boolean;
+  fbp?: string;
+  fbc?: string;
+};
+
+function safeMetadataValue(value: string | null | undefined, maxLength = 500) {
+  if (!value) return undefined;
+  return value.replace(/[\r\n]/g, " ").slice(0, maxLength);
+}
+
 export async function POST(request: NextRequest) {
-  const { items } = (await request.json()) as { items: CartItem[] };
+  const { items, metaTracking } = (await request.json()) as {
+    items: CartItem[];
+    metaTracking?: MetaTracking;
+  };
 
   if (!items?.length) {
     return NextResponse.json({ error: "Cart is empty" }, { status: 400 });
@@ -71,6 +85,38 @@ export async function POST(request: NextRequest) {
           },
         ];
 
+  const trackingConsent = metaTracking?.consent === true;
+  const forwardedFor = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
+  const sourceUrl = request.nextUrl.origin;
+  const rawTrackingMetadata = {
+    meta_tracking_consent: trackingConsent ? "accepted" : "rejected",
+    meta_fbp: trackingConsent ? safeMetadataValue(metaTracking?.fbp, 255) : undefined,
+    meta_fbc: trackingConsent ? safeMetadataValue(metaTracking?.fbc, 255) : undefined,
+    meta_client_ip_address: trackingConsent ? safeMetadataValue(forwardedFor, 64) : undefined,
+    meta_client_user_agent: trackingConsent
+      ? safeMetadataValue(request.headers.get("user-agent"))
+      : undefined,
+    meta_source_url: safeMetadataValue(`${sourceUrl}/checkout/return`),
+    meta_contents: safeMetadataValue(
+      JSON.stringify(
+        items.map((item) => {
+          const product = products.find((entry) => entry.slug === item.slug);
+          const variant = product?.variants.find((entry) => entry.label === item.variant) ?? product?.variants[0];
+          return {
+            id: item.slug,
+            quantity: item.quantity,
+            item_price: variant?.price,
+          };
+        }),
+      ),
+    ),
+  };
+  const trackingMetadata = Object.fromEntries(
+    Object.entries(rawTrackingMetadata).filter(
+      (entry): entry is [string, string] => typeof entry[1] === "string",
+    ),
+  );
+
   const session = await getStripe().checkout.sessions.create({
     integration_identifier: "veylo_checkout_kmtrpexa",
     ui_mode: "embedded_page",
@@ -80,6 +126,7 @@ export async function POST(request: NextRequest) {
     shipping_options: shippingOptions,
     allow_promotion_codes: true,
     return_url: `${request.nextUrl.origin}/checkout/return?session_id={CHECKOUT_SESSION_ID}`,
+    metadata: trackingMetadata,
   });
 
   return NextResponse.json({ clientSecret: session.client_secret });
