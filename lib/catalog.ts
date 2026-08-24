@@ -27,6 +27,8 @@ export type Product = {
   variants: Variant[];
   features: string[];
   leadTime: string;
+  /** Absolute URL to the hero product image (used for OG and JSON-LD). */
+  image?: string;
 };
 
 const pearl: Finish = { name: "Pearl", hex: "#f0eae2" };
@@ -41,6 +43,7 @@ export const products: Product[] = [
     slug: "veylo-wand",
     name: "The Veylo Wand",
     tagline: "4-in-1 red light therapy",
+    image: "https://d8j0ntlcm91z4.cloudfront.net/user_3DZsX8XjGmMqL9IN6t2ItqOSeH9/hf_20260823_175045_1485ed57-f4b8-4a93-a36e-91e2960359d3.png",
     strapline: "Red light, microcurrent, gentle warmth and massage — one five-minute ritual.",
     description:
       "Four technologies in one hand-held device: 660nm red light, gentle EMS microcurrent, 42°C warmth and sonic massage. A five-minute evening ritual for skin that looks brighter and feels smoother.",
@@ -69,6 +72,7 @@ export const products: Product[] = [
     slug: "lumen-mask",
     name: "The Lumen Mask",
     tagline: "LED light therapy mask",
+    image: "https://d8j0ntlcm91z4.cloudfront.net/user_3DZsX8XjGmMqL9IN6t2ItqOSeH9/hf_20260823_175045_a02b71d8-5e87-4474-89d9-edc7872668f7.png",
     strapline: "A flexible silicone mask with red and near-infrared light — ten minutes, hands free.",
     description:
       "A wireless silicone LED mask with red and near-infrared modes. It rests lightly on the face, so ten minutes can pass while the kettle boils. For skin that looks brighter and more even.",
@@ -96,6 +100,7 @@ export const products: Product[] = [
     slug: "cool-roller",
     name: "The Cool Roller",
     tagline: "De-puff and calm",
+    image: "https://d8j0ntlcm91z4.cloudfront.net/user_3DZsX8XjGmMqL9IN6t2ItqOSeH9/hf_20260823_175045_96a00a93-6b86-4953-8017-ebca810f5c8a.png",
     strapline: "A stainless-steel roller, kept in the fridge, for mornings that start puffy.",
     description:
       "A weighted stainless-steel roller that stays cold from the fridge. Two minutes over cheeks, brow and jaw and skin looks calmer and less puffy.",
@@ -122,6 +127,7 @@ export const products: Product[] = [
     slug: "sculpt-set",
     name: "The Sculpt Set",
     tagline: "Gua sha and roller",
+    image: "https://d8j0ntlcm91z4.cloudfront.net/user_3DZsX8XjGmMqL9IN6t2ItqOSeH9/hf_20260823_175045_ca4479d6-71b1-4f82-9562-c92e6186d9a3.png",
     strapline: "A gua sha stone and facial roller, with a guide that keeps it simple.",
     description:
       "A matched gua sha stone and facial roller in a cool composite-stone finish. Used slowly in the evening, they help the look of a tense, tired face. A printed guide covers the strokes.",

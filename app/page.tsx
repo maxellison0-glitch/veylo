@@ -18,13 +18,23 @@ export default function HomePage() {
     "@type": "Organization",
     name: "Veylo",
     url: "https://www.veyloskin.com",
+    logo: "https://www.veyloskin.com/og.png",
     description: "Design-led at-home beauty tech, chosen and tested in the UK.",
     areaServed: "GB",
+    contactPoint: { "@type": "ContactPoint", email: "hello@veyloskin.com", contactType: "customer service" },
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Veylo",
+    url: "https://www.veyloskin.com",
   };
 
   return (
     <main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organisationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
       <section className="hero-section">
         <div className="site-container hero-grid">
           <div className="hero-copy">

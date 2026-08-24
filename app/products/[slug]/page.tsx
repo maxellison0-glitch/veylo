@@ -17,7 +17,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${product.name} — ${product.tagline}`,
     description: `${product.description} ${formatPrice(product.price)} with tracked UK delivery.`,
-    openGraph: { title: `${product.name} | Veylo`, description: product.description },
+    openGraph: {
+      title: `${product.name} | Veylo`,
+      description: product.description,
+      ...(product.image ? { images: [{ url: product.image, width: 1024, height: 1280, alt: product.name }] } : {}),
+    },
   };
 }
 
@@ -31,6 +35,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     "@type": "Product",
     name: product.name,
     description: product.description,
+    ...(product.image ? { image: product.image } : {}),
     brand: { "@type": "Brand", name: "Veylo" },
     category: "At-home beauty devices",
     offers: {
