@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "All fields are required" }, { status: 400 });
     }
 
-    const apiKey = process.env.RESEND_API_KEY;
+    const apiKey = process.env.RESEND_API_KEY ?? process.env.resend_api_key;
     if (!apiKey) {
       console.error("Contact form unavailable: RESEND_API_KEY is not configured");
       return NextResponse.json({ error: "Contact form is temporarily unavailable" }, { status: 503 });

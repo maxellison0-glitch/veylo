@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Invalid email" }, { status: 400 });
     }
 
-    const apiKey = process.env.RESEND_API_KEY;
+    const apiKey = process.env.RESEND_API_KEY ?? process.env.resend_api_key;
     if (!apiKey) {
       console.error("Newsletter unavailable: RESEND_API_KEY is not configured");
       return NextResponse.json({ error: "Newsletter is temporarily unavailable" }, { status: 503 });
