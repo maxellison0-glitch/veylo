@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import Script from "next/script";
 import { useCookieConsent } from "./cookie-consent";
 
@@ -9,6 +11,27 @@ const GOOGLE_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GOOGLE_MEASUREMENT_ID;
 
 export function TrackingPixels() {
   const { consent } = useCookieConsent();
+  const pathname = usePathname();
+  const previousPathname = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (consent !== "accepted") return;
+
+    if (previousPathname.current === null) {
+      previousPathname.current = pathname;
+      return;
+    }
+
+    if (previousPathname.current === pathname) return;
+    previousPathname.current = pathname;
+
+    window.fbq?.("track", "PageView");
+    window.ttq?.page();
+    window.gtag?.("event", "page_view", {
+      page_location: window.location.href,
+      page_path: pathname,
+    });
+  }, [consent, pathname]);
 
   if (consent !== "accepted") return null;
 
