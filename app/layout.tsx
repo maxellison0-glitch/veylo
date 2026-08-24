@@ -39,7 +39,14 @@ export async function generateMetadata(): Promise<Metadata> {
       description: "Design-led at-home beauty tech from the UK. Simple devices, honest guidance and rituals that take minutes.",
       images: [socialImage],
     },
-    icons: { icon: "/favicon.png", shortcut: "/favicon.png" },
+    icons: {
+      icon: [
+        { url: "/favicon-48.png", type: "image/png", sizes: "48x48" },
+        { url: "/favicon.png", type: "image/png", sizes: "512x512" },
+      ],
+      shortcut: "/favicon-48.png",
+      apple: { url: "/apple-touch-icon.png", type: "image/png", sizes: "180x180" },
+    },
   };
 }
 
