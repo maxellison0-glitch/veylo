@@ -11,6 +11,8 @@ Verified 23 Aug 2026 on AliExpress (GBP, UK delivery quotes shown at checkout). 
 | **Cool Roller** £14.99 | Stainless steel ice rollers £2.30 (228 sold, 4.7★) — £7.48 | ~£3–5 | **3–5×** | Easy; pick weighted-handle version to match imagery |
 | **Sculpt Set** £16.99 | Grey agate roller + gua sha set £4.74 (5★, £4.50 @2+); Natural grey agate gua sha £6.41 (87 sold, 5★) | ~£5–7 | **2.4–3.4×** | Grey stone matches the site photography ✓ |
 | **Glow Ritual** £59.99 | = Wand + Cool Roller shipped together | ~£15–17 | **3.5×** | Test phase: place both items in ONE AliExpress order to the customer's address; CJ can properly bundle later |
+| **Relief Belt** £74.99 | 120 LEDs 660nm+850nm infrared belt — £23.77 (4.8★, 497 sold, LED Therapy Life Store). AliExpress item 1005008660925538 | ~£24 | **3.1×** | UK plug variant. Sep 02–07 delivery. 28×19×6cm, 0.5kg. Velcro strap, 20-min auto timer |
+| **Relief Ritual** £109.99 | = Wand + Relief Belt shipped together | ~£36 | **3.1×** | Two separate AliExpress orders to customer address in Phase 1; CJ bundles in Phase 2 |
 
 ## Fulfilment plan
 

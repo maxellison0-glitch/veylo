@@ -21,7 +21,7 @@ export type Product = {
   price: number;
   previousPrice?: number;
   badge?: string;
-  concern: "Fine lines" | "Puffiness" | "Dullness" | "Tension" | "Complete ritual";
+  concern: "Fine lines" | "Puffiness" | "Dullness" | "Tension" | "Complete ritual" | "Pain relief" | "Recovery";
   ptype: "Device" | "Accessory" | "Set";
   finishes: Finish[];
   variants: Variant[];
@@ -175,6 +175,61 @@ export const products: Product[] = [
       "5-minute daily ritual guide",
       "One box, one delivery",
       "£5 saving on the separate prices",
+    ],
+    leadTime: standardLeadTime,
+  },
+  {
+    slug: "relief-belt",
+    name: "The Relief Belt",
+    tagline: "Infrared body therapy",
+    strapline: "120 LEDs of red and near-infrared light, wrapped around wherever it hurts.",
+    description:
+      "A flexible therapy belt with 120 LEDs delivering 660nm red light and 850nm near-infrared. Wrap it around your back, knee, shoulder or hips for a twenty-minute session that leaves muscles feeling looser and joints less stiff.",
+    longDescription:
+      "The Relief Belt brings clinical-grade wavelengths into a wearable pad you can use on the sofa. One hundred and twenty LEDs alternate between 660nm red light and 850nm near-infrared, targeting both surface tissue and deeper muscle. The flexible pad wraps around the lower back, knee, shoulder or hip with a secure velcro strap, so you can move gently while it works. Twenty minutes a day is all it takes. The belt plugs in via a UK three-pin plug — no batteries to charge — and weighs just 500g.",
+    howTo:
+      "Place the belt against the area you want to treat — lower back, knee, shoulder or hip. Secure the velcro strap so the LEDs sit flat against the skin or thin clothing. Plug in and switch on. Relax for twenty minutes; the belt switches itself off. Use daily or as needed.",
+    specs: "120 LEDs (660nm + 850nm). 28 × 19 × 6cm. 500g. UK three-pin plug. Velcro strap, one size. 20-minute auto timer.",
+    price: 74.99,
+    concern: "Pain relief",
+    ptype: "Device",
+    finishes: [{ name: "Charcoal", hex: "#2d2d2d" }],
+    variants: [{ label: "Relief Belt", note: "UK plug, 20-min auto timer", price: 74.99 }],
+    features: [
+      "120 LEDs — 660nm red + 850nm near-infrared",
+      "Flexible wrap for back, knee, shoulder, hip",
+      "20-minute auto-off timer",
+      "UK three-pin plug — no charging",
+      "Lightweight at 500g",
+      "Velcro strap, one size fits all",
+    ],
+    leadTime: standardLeadTime,
+  },
+  {
+    slug: "relief-ritual",
+    name: "The Relief Ritual",
+    tagline: "Wand + Belt",
+    strapline: "The Veylo Wand for your face and the Relief Belt for your body — one morning-and-evening ritual.",
+    description:
+      "Face and body in one box: the Veylo Wand for a five-minute facial and the Relief Belt for twenty minutes of infrared therapy on sore muscles and joints. Together, the set saves £15 on the separate prices.",
+    longDescription:
+      "The Relief Ritual pairs our two infrared devices into a complete head-to-body routine. Evenings start with the Veylo Wand — red light, microcurrent, warmth and massage across the face. Then wrap the Relief Belt around your back or knees while you wind down. It is a full-body ritual in under thirty minutes. Both arrive in one box, priced £15 below buying each piece separately.",
+    howTo:
+      "Evening: five minutes with the Veylo Wand on clean, dry skin, gliding upwards and outwards, then follow with serum. While the serum settles, wrap the Relief Belt around your back, knee or shoulder and relax for twenty minutes. That is the whole ritual.",
+    specs: "Includes the Veylo Wand (16.5cm × 4.1cm, 128g, USB-C, IPX4) and the Relief Belt (28 × 19 × 6cm, 500g, UK plug, 120 LEDs). Boxed together.",
+    price: 109.99,
+    previousPrice: 124.98,
+    badge: "Save £15",
+    concern: "Recovery",
+    ptype: "Set",
+    finishes: [pearl],
+    variants: [{ label: "Relief Ritual", note: "Wand and Belt together", price: 109.99 }],
+    features: [
+      "The Veylo Wand — 4-in-1 facial red light device",
+      "The Relief Belt — 120 LED body therapy wrap",
+      "Face-and-body ritual in under 30 minutes",
+      "One box, one delivery",
+      "£15 saving on the separate prices",
     ],
     leadTime: standardLeadTime,
   },

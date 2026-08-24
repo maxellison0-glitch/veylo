@@ -27,6 +27,7 @@ export default function DeliveryPage() {
         <section>
           <h2>3. Delivery timescales</h2>
           <p>Tracked UK delivery takes 4&ndash;7 working days from dispatch.</p>
+          <p>Orders containing more than one item may arrive in separate packages on different days.</p>
           <p>These timescales are estimates and not guaranteed. Delays may occur due to high demand, carrier issues or circumstances beyond our control. We will contact you if there is a significant delay.</p>
         </section>
 
