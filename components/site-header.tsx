@@ -25,38 +25,42 @@ export function SiteHeader() {
   }, [menuOpen]);
 
   return (
-    <header className="site-header">
-      <div className="site-container header-inner">
-        <button className="icon-button mobile-menu-button" onClick={() => setMenuOpen(true)} aria-label="Open menu">
-          <Menu size={22} strokeWidth={1.6} />
-        </button>
-        <nav className="desktop-nav" aria-label="Main navigation">
-          {links.map((link) => <Link href={link.href} key={link.href}>{link.label}</Link>)}
-        </nav>
-        <Logo />
-        <div className="header-actions">
-          <button className="icon-button" onClick={() => setSearchOpen((open) => !open)} aria-label="Search">
-            <Search size={20} strokeWidth={1.6} />
+    <>
+      <header className="site-header">
+        <div className="site-container header-inner">
+          <button className="icon-button mobile-menu-button" onClick={() => setMenuOpen(true)} aria-label="Open menu">
+            <Menu size={22} strokeWidth={1.6} />
           </button>
-          <button className="bag-button" onClick={() => setDrawerOpen(true)} aria-label={`Open bag with ${itemCount} items`}>
-            <ShoppingBag size={20} strokeWidth={1.6} />
-            <span>Bag</span>
-            <span className="bag-count">{itemCount}</span>
-          </button>
-        </div>
-      </div>
-      {searchOpen && (
-        <div className="search-panel">
-          <form className="site-container search-form" action="/shop">
-            <Search size={20} strokeWidth={1.6} aria-hidden="true" />
-            <label className="sr-only" htmlFor="site-search">Search Veylo</label>
-            <input id="site-search" name="q" placeholder="Search devices and accessories" />
-            <button type="button" className="icon-button" onClick={() => setSearchOpen(false)} aria-label="Close search">
-              <X size={20} strokeWidth={1.6} />
+          <nav className="desktop-nav" aria-label="Main navigation">
+            {links.map((link) => <Link href={link.href} key={link.href}>{link.label}</Link>)}
+          </nav>
+          <Logo />
+          <div className="header-actions">
+            <button className="icon-button" onClick={() => setSearchOpen((open) => !open)} aria-label="Search">
+              <Search size={20} strokeWidth={1.6} />
             </button>
-          </form>
+            <button className="bag-button" onClick={() => setDrawerOpen(true)} aria-label={`Open bag with ${itemCount} items`}>
+              <ShoppingBag size={20} strokeWidth={1.6} />
+              <span>Bag</span>
+              <span className="bag-count">{itemCount}</span>
+            </button>
+          </div>
         </div>
-      )}
+        {searchOpen && (
+          <div className="search-panel">
+            <form className="site-container search-form" action="/shop">
+              <Search size={20} strokeWidth={1.6} aria-hidden="true" />
+              <label className="sr-only" htmlFor="site-search">Search Veylo</label>
+              <input id="site-search" name="q" placeholder="Search devices and accessories" />
+              <button type="button" className="icon-button" onClick={() => setSearchOpen(false)} aria-label="Close search">
+                <X size={20} strokeWidth={1.6} />
+              </button>
+            </form>
+          </div>
+        )}
+      </header>
+      {/* Rendered outside <header>: .site-header has backdrop-filter, which makes it the
+          containing block for fixed-position descendants and would clip this to the header. */}
       <div className={`mobile-menu ${menuOpen ? "is-open" : ""}`} aria-hidden={!menuOpen}>
         <div className="mobile-menu-top">
           <Logo inverse />
@@ -74,6 +78,6 @@ export function SiteHeader() {
         </nav>
         <p>Five minutes a day.<br />A calmer kind of beauty tech.</p>
       </div>
-    </header>
+    </>
   );
 }
