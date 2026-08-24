@@ -18,7 +18,7 @@ type ProductImageProps = {
  * Hero shots generated 23 Aug 2026 (Higgsfield marketing_studio_image, 4:5).
  * Served from the generation CDN for now; replace with self-hosted
  * /products/{slug}.jpg files once downloaded from the Higgsfield library.
- * glow-ritual has no shot yet (daily generation cap) — placeholder shows.
+ * Glow Ritual is self-hosted in public/products.
  */
 const remoteImages: Record<string, string> = {
   "veylo-wand":
@@ -29,6 +29,7 @@ const remoteImages: Record<string, string> = {
     "https://d8j0ntlcm91z4.cloudfront.net/user_3DZsX8XjGmMqL9IN6t2ItqOSeH9/hf_20260823_175045_96a00a93-6b86-4953-8017-ebca810f5c8a.png",
   "sculpt-set":
     "https://d8j0ntlcm91z4.cloudfront.net/user_3DZsX8XjGmMqL9IN6t2ItqOSeH9/hf_20260823_175045_ca4479d6-71b1-4f82-9562-c92e6186d9a3.png",
+  "glow-ritual": "/products/glow-ritual.png",
 };
 
 /**
