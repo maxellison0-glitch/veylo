@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
     const resend = new Resend(apiKey);
 
     await resend.emails.send({
-      from: "Veylo <notifications@veyloskin.com>",
+      from: "Veylo <hello@veyloskin.com>",
       to: "hello@veyloskin.com",
       subject: `New subscriber: ${email}`,
       text: `New newsletter signup:\n\n${email}\n\nTime: ${new Date().toISOString()}`,
