@@ -1,6 +1,6 @@
 # Veylo storefront
 
-The frontend for Veylo, a UK ecommerce brand for design-led at-home beauty tech. The domain is veyloskin.co.uk (not yet live).
+The frontend for Veylo, a UK ecommerce brand for design-led at-home beauty tech. The production domain is www.veyloskin.com.
 
 ## Stack
 

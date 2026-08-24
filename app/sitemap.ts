@@ -3,7 +3,7 @@ import { products } from "@/lib/catalog";
 import { journalPosts } from "@/lib/journal";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://veyloskin.co.uk";
+  const baseUrl = "https://www.veyloskin.com";
   const staticRoutes = ["", "/shop", "/about", "/contact", "/terms", "/privacy", "/delivery", "/returns", "/cookies"].map((path) => ({
     url: `${baseUrl}${path}`,
     lastModified: new Date("2026-08-23"),

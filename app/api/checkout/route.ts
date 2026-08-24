@@ -72,6 +72,7 @@ export async function POST(request: NextRequest) {
         ];
 
   const session = await getStripe().checkout.sessions.create({
+    integration_identifier: "veylo_checkout_kmtrpexa",
     ui_mode: "embedded",
     mode: "payment",
     line_items: lineItems,

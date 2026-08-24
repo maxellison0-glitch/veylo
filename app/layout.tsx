@@ -13,7 +13,7 @@ import "./globals.css";
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
-  const host = requestHeaders.get("x-forwarded-host")?.split(",")[0].trim() ?? requestHeaders.get("host") ?? "veyloskin.co.uk";
+  const host = requestHeaders.get("x-forwarded-host")?.split(",")[0].trim() ?? requestHeaders.get("host") ?? "www.veyloskin.com";
   const forwardedProtocol = requestHeaders.get("x-forwarded-proto")?.split(",")[0].trim();
   const protocol = forwardedProtocol ?? (host.includes("localhost") ? "http" : "https");
   const origin = `${protocol}://${host}`;

@@ -14,8 +14,8 @@ export default async function ShopPage({ searchParams }: { searchParams: Promise
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://veyloskin.co.uk" },
-      { "@type": "ListItem", position: 2, name: "Shop", item: "https://veyloskin.co.uk/shop" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.veyloskin.com" },
+      { "@type": "ListItem", position: 2, name: "Shop", item: "https://www.veyloskin.com/shop" },
     ],
   };
 

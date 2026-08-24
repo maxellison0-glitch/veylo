@@ -38,7 +38,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       priceCurrency: "GBP",
       price: product.price,
       availability: "https://schema.org/InStock",
-      url: `https://veyloskin.co.uk/products/${product.slug}`,
+      url: `https://www.veyloskin.com/products/${product.slug}`,
       seller: { "@type": "Organization", name: "Veylo" },
     },
   };
@@ -46,9 +46,9 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://veyloskin.co.uk" },
-      { "@type": "ListItem", position: 2, name: "Shop", item: "https://veyloskin.co.uk/shop" },
-      { "@type": "ListItem", position: 3, name: product.name, item: `https://veyloskin.co.uk/products/${product.slug}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.veyloskin.com" },
+      { "@type": "ListItem", position: 2, name: "Shop", item: "https://www.veyloskin.com/shop" },
+      { "@type": "ListItem", position: 3, name: product.name, item: `https://www.veyloskin.com/products/${product.slug}` },
     ],
   };
 

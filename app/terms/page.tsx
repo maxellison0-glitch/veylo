@@ -16,12 +16,12 @@ export default function TermsPage() {
 
         <section>
           <h2>1. About us</h2>
-          <p>Veylo (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;) operates veyloskin.co.uk. Our address is The Fairmont, Kitty Lane, FY4 5EG, United Kingdom. You can reach us at <a href="mailto:hello@veyloskin.co.uk">hello@veyloskin.co.uk</a>.</p>
+          <p>Veylo (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;) operates veyloskin.com. Our address is The Fairmont, Kitty Lane, FY4 5EG, United Kingdom. You can reach us at <a href="mailto:hello@veyloskin.com">hello@veyloskin.com</a>.</p>
         </section>
 
         <section>
           <h2>2. These terms</h2>
-          <p>By placing an order through veyloskin.co.uk you agree to be bound by these terms together with our <Link href="/privacy">Privacy Notice</Link>, <Link href="/delivery">Delivery Policy</Link>, <Link href="/returns">Returns Policy</Link> and <Link href="/cookies">Cookie Policy</Link>. We may update these terms from time to time; the version in force at the date of your order applies.</p>
+          <p>By placing an order through veyloskin.com you agree to be bound by these terms together with our <Link href="/privacy">Privacy Notice</Link>, <Link href="/delivery">Delivery Policy</Link>, <Link href="/returns">Returns Policy</Link> and <Link href="/cookies">Cookie Policy</Link>. We may update these terms from time to time; the version in force at the date of your order applies.</p>
         </section>
 
         <section>
@@ -69,7 +69,7 @@ export default function TermsPage() {
 
         <section>
           <h2>11. Contact</h2>
-          <p>Questions about these terms? Email us at <a href="mailto:hello@veyloskin.co.uk">hello@veyloskin.co.uk</a> or write to Veylo, The Fairmont, Kitty Lane, FY4 5EG.</p>
+          <p>Questions about these terms? Email us at <a href="mailto:hello@veyloskin.com">hello@veyloskin.com</a> or write to Veylo, The Fairmont, Kitty Lane, FY4 5EG.</p>
         </section>
       </div>
     </main>

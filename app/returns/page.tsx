@@ -27,7 +27,7 @@ export default function ReturnsPage() {
         <section>
           <h2>3. How to start a return</h2>
           <ol>
-            <li>Email <a href="mailto:hello@veyloskin.co.uk">hello@veyloskin.co.uk</a> with your order number and the item you would like to return</li>
+            <li>Email <a href="mailto:hello@veyloskin.com">hello@veyloskin.com</a> with your order number and the item you would like to return</li>
             <li>We will confirm eligibility and send you the return address</li>
             <li>Pack the item securely, unused and in its original packaging, and post it back to us</li>
           </ol>
@@ -41,17 +41,17 @@ export default function ReturnsPage() {
 
         <section>
           <h2>5. Faulty or incorrect items</h2>
-          <p>If you receive an item that is faulty, damaged in transit or not what you ordered, contact us within 48 hours of delivery at <a href="mailto:hello@veyloskin.co.uk">hello@veyloskin.co.uk</a> with your order number and photographs. We will arrange a replacement or a full refund, including any return postage. Your rights under the Consumer Rights Act 2015 are not affected.</p>
+          <p>If you receive an item that is faulty, damaged in transit or not what you ordered, contact us within 48 hours of delivery at <a href="mailto:hello@veyloskin.com">hello@veyloskin.com</a> with your order number and photographs. We will arrange a replacement or a full refund, including any return postage. Your rights under the Consumer Rights Act 2015 are not affected.</p>
         </section>
 
         <section>
           <h2>6. Late or missing refunds</h2>
-          <p>Refunds typically appear within 5&ndash;10 working days depending on your payment provider. If you have not received your refund after this period, check with your bank or card issuer first, then contact us at <a href="mailto:hello@veyloskin.co.uk">hello@veyloskin.co.uk</a>.</p>
+          <p>Refunds typically appear within 5&ndash;10 working days depending on your payment provider. If you have not received your refund after this period, check with your bank or card issuer first, then contact us at <a href="mailto:hello@veyloskin.com">hello@veyloskin.com</a>.</p>
         </section>
 
         <section>
           <h2>7. Contact</h2>
-          <p>For any returns or refund queries, email <a href="mailto:hello@veyloskin.co.uk">hello@veyloskin.co.uk</a> or write to Veylo, The Fairmont, Kitty Lane, FY4 5EG.</p>
+          <p>For any returns or refund queries, email <a href="mailto:hello@veyloskin.com">hello@veyloskin.com</a> or write to Veylo, The Fairmont, Kitty Lane, FY4 5EG.</p>
         </section>
       </div>
     </main>

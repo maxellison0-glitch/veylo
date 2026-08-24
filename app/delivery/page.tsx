@@ -40,7 +40,7 @@ export default function DeliveryPage() {
 
         <section>
           <h2>5. Delivery address</h2>
-          <p>Please ensure your delivery address is correct at checkout. We cannot be held responsible for orders delivered to an incorrect address provided by the customer. If you need to change your delivery address after placing an order, contact us as soon as possible at <a href="mailto:hello@veyloskin.co.uk">hello@veyloskin.co.uk</a>. Changes may not be possible once an order has been dispatched.</p>
+          <p>Please ensure your delivery address is correct at checkout. We cannot be held responsible for orders delivered to an incorrect address provided by the customer. If you need to change your delivery address after placing an order, contact us as soon as possible at <a href="mailto:hello@veyloskin.com">hello@veyloskin.com</a>. Changes may not be possible once an order has been dispatched.</p>
         </section>
 
         <section>
@@ -50,12 +50,12 @@ export default function DeliveryPage() {
 
         <section>
           <h2>7. Damaged or missing items</h2>
-          <p>Please inspect your order on arrival. If anything is damaged, missing or incorrect, contact us within 48 hours at <a href="mailto:hello@veyloskin.co.uk">hello@veyloskin.co.uk</a> with photographs of the item and packaging. We will arrange a replacement or refund as set out in our <Link href="/returns">Returns Policy</Link>.</p>
+          <p>Please inspect your order on arrival. If anything is damaged, missing or incorrect, contact us within 48 hours at <a href="mailto:hello@veyloskin.com">hello@veyloskin.com</a> with photographs of the item and packaging. We will arrange a replacement or refund as set out in our <Link href="/returns">Returns Policy</Link>.</p>
         </section>
 
         <section>
           <h2>8. Contact</h2>
-          <p>For any delivery enquiries, email <a href="mailto:hello@veyloskin.co.uk">hello@veyloskin.co.uk</a>.</p>
+          <p>For any delivery enquiries, email <a href="mailto:hello@veyloskin.com">hello@veyloskin.com</a>.</p>
         </section>
       </div>
     </main>

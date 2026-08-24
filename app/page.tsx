@@ -17,7 +17,7 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Veylo",
-    url: "https://veyloskin.co.uk",
+    url: "https://www.veyloskin.com",
     description: "Design-led at-home beauty tech, chosen and tested in the UK.",
     areaServed: "GB",
   };

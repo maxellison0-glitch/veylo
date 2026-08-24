@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Cookie Policy",
-  description: "How Veylo uses cookies and similar technologies on veyloskin.co.uk.",
+  description: "How Veylo uses cookies and similar technologies on veyloskin.com.",
 };
 
 export default function CookiesPage() {
@@ -61,7 +61,7 @@ export default function CookiesPage() {
 
         <section>
           <h2>6. More information</h2>
-          <p>For details on how we handle personal data, see our <Link href="/privacy">Privacy Notice</Link>. For any questions, email <a href="mailto:hello@veyloskin.co.uk">hello@veyloskin.co.uk</a>.</p>
+          <p>For details on how we handle personal data, see our <Link href="/privacy">Privacy Notice</Link>. For any questions, email <a href="mailto:hello@veyloskin.com">hello@veyloskin.com</a>.</p>
         </section>
       </div>
     </main>

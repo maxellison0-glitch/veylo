@@ -16,7 +16,7 @@ export default function PrivacyPage() {
 
         <section>
           <h2>1. Who we are</h2>
-          <p>Veylo is the data controller for personal data collected through veyloskin.co.uk. Our address is The Fairmont, Kitty Lane, FY4 5EG, United Kingdom. Contact us at <a href="mailto:hello@veyloskin.co.uk">hello@veyloskin.co.uk</a>.</p>
+          <p>Veylo is the data controller for personal data collected through veyloskin.com. Our address is The Fairmont, Kitty Lane, FY4 5EG, United Kingdom. Contact us at <a href="mailto:hello@veyloskin.com">hello@veyloskin.com</a>.</p>
         </section>
 
         <section>
@@ -71,7 +71,7 @@ export default function PrivacyPage() {
             <li>Data portability</li>
             <li>Withdraw consent at any time (where processing is based on consent)</li>
           </ul>
-          <p>To exercise any of these rights, email <a href="mailto:hello@veyloskin.co.uk">hello@veyloskin.co.uk</a>. We will respond within one month.</p>
+          <p>To exercise any of these rights, email <a href="mailto:hello@veyloskin.com">hello@veyloskin.com</a>. We will respond within one month.</p>
         </section>
 
         <section>
