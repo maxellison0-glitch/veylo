@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { AtSign } from "lucide-react";
 import { Logo } from "./logo";
 import { Newsletter } from "./newsletter";
 
@@ -29,7 +28,7 @@ export function SiteFooter() {
       </div>
       <div className="site-container footer-bottom">
         <span>© {new Date().getFullYear()} Veylo. hello@veyloskin.com</span>
-        <div><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link><Link href="/cookies">Cookies</Link><a href="https://www.instagram.com/veyloskin" aria-label="Veylo on Instagram" rel="noopener noreferrer" target="_blank"><AtSign size={17} strokeWidth={1.4} /></a></div>
+        <div><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link><Link href="/cookies">Cookies</Link></div>
       </div>
       <div className="footer-wordmark" aria-hidden="true">VEYLO</div>
     </footer>
