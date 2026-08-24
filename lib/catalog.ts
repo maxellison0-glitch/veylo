@@ -182,6 +182,7 @@ export const products: Product[] = [
     slug: "relief-belt",
     name: "The Relief Belt",
     tagline: "Infrared body therapy",
+    image: "https://d8j0ntlcm91z4.cloudfront.net/user_3DZsX8XjGmMqL9IN6t2ItqOSeH9/hf_20260824_144031_6bcddcea-237c-4692-ba62-e30c22c1fc68.png",
     strapline: "120 LEDs of red and near-infrared light, wrapped around wherever it hurts.",
     description:
       "A flexible therapy belt with 120 LEDs delivering 660nm red light and 850nm near-infrared. Wrap it around your back, knee, shoulder or hips for a twenty-minute session that leaves muscles feeling looser and joints less stiff.",
