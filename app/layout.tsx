@@ -54,8 +54,8 @@ export const viewport: Viewport = { width: "device-width", initialScale: 1, them
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-GB">
-      <body className={`${GeistSans.variable} antialiased`}>
+    <html lang="en-GB" className={GeistSans.variable}>
+      <body className="antialiased">
         <StoreProvider>
           <CookieConsentProvider>
             <TrackingPixels />
