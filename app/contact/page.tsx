@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mail, MapPin, MessageCircle } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ export default function ContactPage() {
     <main className="contact-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <section className="contact-hero"><div className="site-container"><span className="eyebrow eyebrow-light">We&rsquo;re here</span><h1>Ask us <em>anything.</em></h1><p>Questions about an order, a delivery or how to use your device? Send us a note.</p></div></section>
-      <section className="contact-main"><div className="site-container contact-grid"><div className="contact-details"><span className="eyebrow">Contact Veylo</span><h2>A small team,<br />with real replies.</h2><p>We answer messages Monday to Friday and usually come back within two working days.</p><div className="contact-methods"><a href="mailto:hello@veyloskin.com"><Mail size={20} /><span><small>Email</small>hello@veyloskin.com</span></a><div><MapPin size={20} /><span><small>Based in</small>United Kingdom</span></div><a href="https://www.instagram.com"><MessageCircle size={20} /><span><small>Social</small>@veyloskin</span></a></div></div><ContactForm /></div></section>
+      <section className="contact-main"><div className="site-container contact-grid"><div className="contact-details"><span className="eyebrow">Contact Veylo</span><h2>A small team,<br />with real replies.</h2><p>We answer messages Monday to Friday and usually come back within two working days.</p><div className="contact-methods"><a href="mailto:hello@veyloskin.com"><Mail size={20} /><span><small>Email</small>hello@veyloskin.com</span></a><div><MapPin size={20} /><span><small>Based in</small>United Kingdom</span></div></div></div><ContactForm /></div></section>
       <section className="faq-section" id="faq"><div className="site-container faq-layout"><div><span className="eyebrow">Useful answers</span><h2>Frequently<br /><em>asked.</em></h2><p id="delivery">Still unsure? We are happy to help with delivery, returns or choosing a device.</p></div><div className="faq-list">{faqs.map(([question, answer], index) => <details key={question}><summary><span>0{index + 1}</span>{question}</summary><p>{answer}</p></details>)}</div></div></section>
     </main>
   );

@@ -92,7 +92,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       ];
     });
 
-    trackAddToCart({ name: product.name, price: variant.price, quantity });
+    trackAddToCart({ id: product.slug, name: product.name, price: variant.price, quantity });
     if (options.openDrawer !== false) setDrawerOpen(true);
   }
 

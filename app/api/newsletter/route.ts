@@ -3,8 +3,6 @@ import { Resend } from "resend";
 
 export const dynamic = "force-dynamic";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: NextRequest) {
   try {
     const { email } = (await request.json()) as { email?: string };
@@ -12,6 +10,14 @@ export async function POST(request: NextRequest) {
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return NextResponse.json({ error: "Invalid email" }, { status: 400 });
     }
+
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      console.error("Newsletter unavailable: RESEND_API_KEY is not configured");
+      return NextResponse.json({ error: "Newsletter is temporarily unavailable" }, { status: 503 });
+    }
+
+    const resend = new Resend(apiKey);
 
     await resend.emails.send({
       from: "Veylo <notifications@veyloskin.com>",

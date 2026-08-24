@@ -3,8 +3,6 @@ import { Resend } from "resend";
 
 export const dynamic = "force-dynamic";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 type ContactPayload = {
   firstName?: string;
   lastName?: string;
@@ -21,6 +19,14 @@ export async function POST(request: NextRequest) {
     if (!firstName || !lastName || !email || !subject || !message) {
       return NextResponse.json({ error: "All fields are required" }, { status: 400 });
     }
+
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      console.error("Contact form unavailable: RESEND_API_KEY is not configured");
+      return NextResponse.json({ error: "Contact form is temporarily unavailable" }, { status: 503 });
+    }
+
+    const resend = new Resend(apiKey);
 
     await resend.emails.send({
       from: "Veylo <notifications@veyloskin.com>",

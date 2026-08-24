@@ -1,8 +1,10 @@
 "use client";
 
 import { Check, Heart, Minus, Plus, Truck } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { formatPrice, type Product } from "@/lib/catalog";
+import { trackViewContent } from "@/lib/tracking";
+import { useCookieConsent } from "./cookie-consent";
 import { ProductImage } from "./product-art";
 import { useStore } from "./store-provider";
 
@@ -12,7 +14,20 @@ export function ProductPurchase({ product }: { product: Product }) {
   const [quantity, setQuantity] = useState(1);
   const [view, setView] = useState(0);
   const [favourite, setFavourite] = useState(false);
+  const trackedVariant = useRef<string | null>(null);
+  const { consent } = useCookieConsent();
   const { addItem } = useStore();
+
+  useEffect(() => {
+    if (consent !== "accepted" || trackedVariant.current === variant.label) return;
+    trackedVariant.current = variant.label;
+    trackViewContent({
+      id: product.slug,
+      name: product.name,
+      price: variant.price,
+      quantity: 1,
+    });
+  }, [consent, product.name, product.slug, variant.label, variant.price]);
 
   return (
     <div className="product-detail-grid">

@@ -17,7 +17,7 @@ export function CheckoutForm() {
   useEffect(() => {
     if (items.length && !tracked.current) {
       tracked.current = true;
-      trackBeginCheckout(subtotal, items.map((i) => ({ name: i.name, price: i.price, quantity: i.quantity })));
+      trackBeginCheckout(subtotal, items.map((item) => ({ id: item.slug, name: item.name, price: item.price, quantity: item.quantity })));
     }
   }, [items, subtotal]);
 
