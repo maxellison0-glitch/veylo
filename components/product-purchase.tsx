@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { formatPrice, type Product } from "@/lib/catalog";
 import { trackViewContent } from "@/lib/tracking";
 import { useCookieConsent } from "./cookie-consent";
-import { ProductImage } from "./product-art";
+import { ProductImage, getProductImageCount } from "./product-art";
 import { useStore } from "./store-provider";
 
 export function ProductPurchase({ product }: { product: Product }) {
@@ -17,6 +17,7 @@ export function ProductPurchase({ product }: { product: Product }) {
   const trackedVariant = useRef<string | null>(null);
   const { consent } = useCookieConsent();
   const { addItem } = useStore();
+  const imageCount = getProductImageCount(product.slug);
 
   useEffect(() => {
     if (consent !== "accepted" || trackedVariant.current === variant.label) return;
@@ -34,13 +35,13 @@ export function ProductPurchase({ product }: { product: Product }) {
       <div className="product-gallery">
         <div className={`product-main-view gallery-view-${view}`}>
           {product.badge && <span className="product-badge">{product.badge}</span>}
-          <ProductImage slug={product.slug} name={product.name} finish={finish.hex} alt={`${product.name} in ${finish.name}`} sizes="(max-width: 800px) 100vw, 55vw" priority />
-          <span className="gallery-view-label">0{view + 1} / 03</span>
+          <ProductImage slug={product.slug} name={product.name} imageIndex={view} finish={finish.hex} alt={`${product.name} in ${finish.name}`} sizes="(max-width: 800px) 100vw, 55vw" priority={view === 0} />
+          <span className="gallery-view-label">0{view + 1} / 0{imageCount}</span>
         </div>
         <div className="gallery-thumbnails">
-          {[0, 1, 2].map((item) => (
+          {Array.from({ length: imageCount }, (_, i) => i).map((item) => (
             <button className={view === item ? "is-selected" : ""} key={item} onClick={() => setView(item)} aria-label={`View product image ${item + 1}`}>
-              <ProductImage slug={product.slug} name={product.name} finish={finish.hex} sizes="120px" />
+              <ProductImage slug={product.slug} name={product.name} imageIndex={item} finish={finish.hex} sizes="120px" />
             </button>
           ))}
         </div>
