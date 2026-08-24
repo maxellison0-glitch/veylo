@@ -52,13 +52,13 @@ const productImages: Record<string, string[]> = {
   ],
   "relief-belt": [
     `${CDN}/hf_20260824_144031_6bcddcea-237c-4692-ba62-e30c22c1fc68.png`,
-    `${CDN}/hf_20260824_185029_88bfbe77-6578-4dd2-a331-0987c17f9759.png`,
-    `${CDN}/hf_20260824_185029_42b49c06-05f6-48f5-89a7-494fadcc52e7.png`,
+    `${CDN}/hf_20260824_185851_bee8c1f7-3a13-4109-8680-3ec711b604dc.png`,
+    `${CDN}/hf_20260824_185850_cef3199c-3ba7-4389-b21e-2053cc38f10e.png`,
   ],
   "relief-ritual": [
     `${CDN}/hf_20260824_144031_6bcddcea-237c-4692-ba62-e30c22c1fc68.png`,
     `${CDN}/hf_20260824_184915_efa8ab87-a0be-4312-89bb-46ac8a09f393.png`,
-    `${CDN}/hf_20260824_185029_88bfbe77-6578-4dd2-a331-0987c17f9759.png`,
+    `${CDN}/hf_20260824_185851_bee8c1f7-3a13-4109-8680-3ec711b604dc.png`,
   ],
 };
 
