@@ -190,11 +190,11 @@ export const products: Product[] = [
     howTo:
       "Place the belt against the area you want to treat — lower back, knee, shoulder or hip. Secure the velcro strap so the LEDs sit flat against the skin or thin clothing. Plug in and switch on. Relax for twenty minutes; the belt switches itself off. Use daily or as needed.",
     specs: "120 LEDs (660nm + 850nm). 28 × 19 × 6cm. 500g. UK three-pin plug. Velcro strap, one size. 20-minute auto timer.",
-    price: 74.99,
+    price: 69.99,
     concern: "Pain relief",
     ptype: "Device",
     finishes: [{ name: "Charcoal", hex: "#2d2d2d" }],
-    variants: [{ label: "Relief Belt", note: "UK plug, 20-min auto timer", price: 74.99 }],
+    variants: [{ label: "Relief Belt", note: "UK plug, 20-min auto timer", price: 69.99 }],
     features: [
       "120 LEDs — 660nm red + 850nm near-infrared",
       "Flexible wrap for back, knee, shoulder, hip",
@@ -217,13 +217,13 @@ export const products: Product[] = [
     howTo:
       "Evening: five minutes with the Veylo Wand on clean, dry skin, gliding upwards and outwards, then follow with serum. While the serum settles, wrap the Relief Belt around your back, knee or shoulder and relax for twenty minutes. That is the whole ritual.",
     specs: "Includes the Veylo Wand (16.5cm × 4.1cm, 128g, USB-C, IPX4) and the Relief Belt (28 × 19 × 6cm, 500g, UK plug, 120 LEDs). Boxed together.",
-    price: 109.99,
-    previousPrice: 124.98,
+    price: 104.99,
+    previousPrice: 119.98,
     badge: "Save £15",
     concern: "Recovery",
     ptype: "Set",
     finishes: [pearl],
-    variants: [{ label: "Relief Ritual", note: "Wand and Belt together", price: 109.99 }],
+    variants: [{ label: "Relief Ritual", note: "Wand and Belt together", price: 104.99 }],
     features: [
       "The Veylo Wand — 4-in-1 facial red light device",
       "The Relief Belt — 120 LED body therapy wrap",
