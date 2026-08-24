@@ -12,7 +12,7 @@ type Filters = {
 
 const emptyFilters: Filters = { concern: [], ptype: [] };
 
-const concernValues: Product["concern"][] = ["Fine lines", "Puffiness", "Dullness", "Tension", "Complete ritual"];
+const concernValues: Product["concern"][] = ["Fine lines", "Puffiness", "Dullness", "Tension", "Pain relief", "Recovery", "Complete ritual"];
 const typeValues: Product["ptype"][] = ["Device", "Accessory", "Set"];
 
 function ToggleGroup({
@@ -69,6 +69,8 @@ export function ShopCatalog({ initialQuery = "" }: { initialQuery?: string }) {
     });
   }, [filters, sort, initialQuery]);
 
+  const singles = result.filter((p) => p.ptype !== "Set");
+  const combos = result.filter((p) => p.ptype === "Set");
   const activeCount = filters.concern.length + filters.ptype.length;
 
   const filterContent = (
@@ -90,7 +92,17 @@ export function ShopCatalog({ initialQuery = "" }: { initialQuery?: string }) {
         </div>
         {initialQuery && <div className="search-result-note">Showing results for &ldquo;{initialQuery}&rdquo;</div>}
         {result.length ? (
-          <div className="product-grid shop-product-grid">{result.map((product, index) => <ProductCard product={product} index={index} key={product.slug} />)}</div>
+          <>
+            {singles.length > 0 && (
+              <div className="product-grid shop-product-grid">{singles.map((product, index) => <ProductCard product={product} index={index} key={product.slug} />)}</div>
+            )}
+            {combos.length > 0 && (
+              <div className="combo-section">
+                <div className="combo-heading"><span className="eyebrow">Save more</span><h2>Combos</h2></div>
+                <div className="product-grid shop-product-grid">{combos.map((product, index) => <ProductCard product={product} index={index} key={product.slug} />)}</div>
+              </div>
+            )}
+          </>
         ) : (
           <div className="empty-results"><span>Nothing matches those filters</span><h2>Try opening up your filters.</h2><button className="button button-primary" onClick={() => setFilters(emptyFilters)}>Reset filters</button></div>
         )}

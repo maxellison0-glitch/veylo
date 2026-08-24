@@ -84,7 +84,13 @@ export default function HomePage() {
             <div className="section-heading-aside"><p>Five products, each chosen against the same bar: a visible-glow ritual in under ten minutes.</p><Link className="text-link" href="/shop">Shop all products <ArrowRight size={15} /></Link></div>
           </div>
           <div className="product-grid">
-            {products.map((product, index) => <ProductCard product={product} index={index} key={product.slug} />)}
+            {products.filter((p) => p.ptype !== "Set").map((product, index) => <ProductCard product={product} index={index} key={product.slug} />)}
+          </div>
+          <div className="combo-section">
+            <div className="combo-heading"><span className="eyebrow">Save more</span><h2>Combos</h2></div>
+            <div className="product-grid">
+              {products.filter((p) => p.ptype === "Set").map((product, index) => <ProductCard product={product} index={index} key={product.slug} />)}
+            </div>
           </div>
         </div>
       </section>

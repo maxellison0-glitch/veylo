@@ -227,6 +227,10 @@ img { max-width: 100%; }
 .shop-toolbar label { display: flex; align-items: center; gap: 8px; }
 .shop-toolbar select { border: 0; background: transparent; color: var(--ink); font-size: 11px; font-weight: 600; outline: none; }
 .shop-product-grid { grid-template-columns: repeat(3, 1fr); }
+.combo-section { margin-top: 60px; padding-top: 50px; border-top: 1px solid var(--line); }
+.combo-heading { margin-bottom: 35px; }
+.combo-heading .eyebrow { margin-bottom: 6px; }
+.combo-heading h2 { font-family: var(--font-display); font-size: 32px; font-weight: 400; }
 .search-result-note { margin: -10px 0 25px; font-family: var(--font-display); font-size: 20px; }
 .mobile-filter-trigger { display: none; align-items: center; gap: 8px; border: 0; background: transparent; padding: 0; font-size: 10px; font-weight: 650; text-transform: uppercase; }
 .mobile-filter-trigger span { width: 18px; height: 18px; display: grid; place-items: center; border-radius: 50%; background: var(--clay); color: white; }
