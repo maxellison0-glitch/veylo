@@ -63,6 +63,14 @@ The `original-*.png` files below are genuine images downloaded from the exact li
 | IceGlide IPL | `public/products/supplier/ipl-ice-pro/original-hero.png` plus `original-2.png` and `original-3.png` | `public/products/ipl-ice-pro.png` |
 | ScalpRevive | `public/products/supplier/scalp-massager/original-hero.png` plus `original-2.png` and `original-3.png` | `public/products/scalp-massager.png` |
 
+## Candidate product videos
+
+These clips visibly match the selected hardware, but they are hosted by third-party marketplace sellers. Do not publish copies until the AliExpress supplier confirms that Veylo may reuse the footage or supplies the original marketing file.
+
+- **EyeRest / Hailicare TH-823:** https://www.lazada.sg/videodetail/?video_id=8000140472344 — vertical handheld demo of the exact white display-and-button model.
+- **ScalpRevive four-head massager:** https://www.lazada.com.ph/videodetail/?video_id=8000057788747 — product demonstration of the matching white four-head body.
+- **IceGlide IPL:** no exact-match reusable video confirmed. The visually similar Shero and Voghion clips show different handset designs and must not be used.
+
 ## Open decisions for Max
 
 1. Lumen Mask: £40.98 NIR spec-match (2× margin) vs £24–28 mask + softened spec copy (3×+). Recommend the second — edit `lib/catalog.ts` specs accordingly.

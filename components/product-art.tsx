@@ -66,9 +66,23 @@ const productImages: Record<string, string[]> = {
     `${CDN}/hf_20260824_185851_bee8c1f7-3a13-4109-8680-3ec711b604dc.png`,
     `${CDN}/hf_20260824_185850_cef3199c-3ba7-4389-b21e-2053cc38f10e.png`,
   ],
-  "ipl-hair-removal": ["/products/ipl-ice-pro.png"],
-  "scalprevive-massager": ["/products/scalp-massager.png"],
-  "eye-rest-massager": ["/products/eye-massager.png"],
+  "ipl-hair-removal": [
+    "/products/ipl-ice-pro.png",
+    "/products/supplier/ipl-ice-pro/original-hero.png",
+    "/products/supplier/ipl-ice-pro/original-2.png",
+  ],
+  "scalprevive-massager": [
+    "/products/scalp-massager.png",
+    "/products/supplier/scalp-massager/original-hero.png",
+    "/products/supplier/scalp-massager/original-2.png",
+    "/products/supplier/scalp-massager/original-3.png",
+  ],
+  "eye-rest-massager": [
+    "/products/eye-massager.png",
+    "/products/supplier/eye-massager-hailicare/original-hero.png",
+    "/products/supplier/eye-massager-hailicare/original-2.png",
+    "/products/supplier/eye-massager-hailicare/original-3.png",
+  ],
 };
 
 /** Get a specific image URL for a product. */
