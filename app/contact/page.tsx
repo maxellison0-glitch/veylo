@@ -5,6 +5,7 @@ import { ContactForm } from "@/components/contact-form";
 export const metadata: Metadata = {
   title: "Contact and FAQs",
   description: "Contact Veylo about an order, delivery, returns or using your device. Answers to common questions about our at-home beauty tech.",
+  alternates: { canonical: "/contact" },
 };
 
 const faqs = [

@@ -6,6 +6,7 @@ import { ProductImage } from "@/components/product-art";
 export const metadata: Metadata = {
   title: "Our story",
   description: "Veylo makes skin and body technology clearer: focused devices, realistic at-home rituals and a safety-first route from supplier to UK customer.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

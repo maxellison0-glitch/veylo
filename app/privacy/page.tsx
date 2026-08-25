@@ -4,6 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Privacy Notice",
   description: "How Veylo collects, uses and protects your personal data under UK GDPR.",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPage() {

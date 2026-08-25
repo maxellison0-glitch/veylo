@@ -8,8 +8,9 @@ import { ProductCard } from "@/components/product-card";
 import { TrustBar } from "@/components/trust-bar";
 
 export const metadata: Metadata = {
-  title: "Beneath the surface",
+  title: "At-Home Skin & Body Technology UK",
   description: "Professional skin and body treatment technology, made clearer for use at home. Explore Veylo devices for face, body and scalp rituals.",
+  alternates: { canonical: "/" },
 };
 
 const concerns = [

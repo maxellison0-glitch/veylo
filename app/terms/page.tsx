@@ -4,6 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Terms and Conditions",
   description: "Terms and conditions for purchasing from Veylo, a UK-based online retailer of at-home beauty devices and accessories.",
+  alternates: { canonical: "/terms" },
 };
 
 export default function TermsPage() {

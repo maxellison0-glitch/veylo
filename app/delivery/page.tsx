@@ -4,6 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Delivery Policy",
   description: "Delivery information for Veylo orders: tracked UK delivery in 4–7 working days, dispatch within 24–48 hours, free over £40.",
+  alternates: { canonical: "/delivery" },
 };
 
 export default function DeliveryPage() {

@@ -4,6 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Cookie Policy",
   description: "How Veylo uses cookies and similar technologies on veyloskin.com.",
+  alternates: { canonical: "/cookies" },
 };
 
 export default function CookiesPage() {

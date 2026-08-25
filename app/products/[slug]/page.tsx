@@ -4,7 +4,8 @@ import { ChevronRight } from "lucide-react";
 import { notFound } from "next/navigation";
 import { ProductCard } from "@/components/product-card";
 import { ProductPurchase } from "@/components/product-purchase";
-import { formatPrice, getProduct, getProductCollections, products } from "@/lib/catalog";
+import { getProduct, getProductCollections, products } from "@/lib/catalog";
+import { absoluteUrl, jsonLd, productSeoDescription, productSeoTitle } from "@/lib/seo";
 
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }));
@@ -14,13 +15,24 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const product = getProduct(slug);
   if (!product) return {};
+  const url = absoluteUrl(`/products/${product.slug}`);
+  const description = productSeoDescription(product);
   return {
-    title: `${product.name} — ${product.tagline}`,
-    description: `${product.description} ${formatPrice(product.price)} with tracked UK delivery.`,
+    title: productSeoTitle(product),
+    description,
+    alternates: { canonical: url },
     openGraph: {
-      title: `${product.name} | Veylo`,
-      description: product.description,
+      type: "website",
+      url,
+      title: `${productSeoTitle(product)} | Veylo`,
+      description,
       ...(product.image ? { images: [{ url: product.image, width: 1024, height: 1280, alt: product.name }] } : {}),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${productSeoTitle(product)} | Veylo`,
+      description,
+      ...(product.image ? { images: [product.image] } : {}),
     },
   };
 }
@@ -59,7 +71,9 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     description: product.description,
     ...(product.image ? { image: product.image } : {}),
     brand: { "@type": "Brand", name: "Veylo" },
-    category: "At-home beauty devices",
+    sku: `VEYLO-${product.slug.toUpperCase()}`,
+    category: productCollections.join(", ") || "At-home beauty devices",
+    color: product.finishes.map((finish) => finish.name).join(", "),
     offers: {
       "@type": "Offer",
       priceCurrency: "GBP",
@@ -67,6 +81,31 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       availability: "https://schema.org/InStock",
       url: `https://www.veyloskin.com/products/${product.slug}`,
       seller: { "@type": "Organization", name: "Veylo" },
+      hasMerchantReturnPolicy: {
+        "@type": "MerchantReturnPolicy",
+        applicableCountry: "GB",
+        returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+        merchantReturnDays: 30,
+        returnMethod: "https://schema.org/ReturnByMail",
+        returnFees: "https://schema.org/ReturnShippingFees",
+      },
+      shippingDetails: {
+        "@type": "OfferShippingDetails",
+        shippingDestination: {
+          "@type": "DefinedRegion",
+          addressCountry: "GB",
+        },
+        shippingRate: {
+          "@type": "MonetaryAmount",
+          value: product.price >= 40 ? 0 : 2.99,
+          currency: "GBP",
+        },
+        deliveryTime: {
+          "@type": "ShippingDeliveryTime",
+          handlingTime: { "@type": "QuantitativeValue", minValue: 1, maxValue: 2, unitCode: "DAY" },
+          transitTime: { "@type": "QuantitativeValue", minValue: 4, maxValue: 7, unitCode: "DAY" },
+        },
+      },
     },
   };
   const breadcrumbSchema = {
@@ -78,11 +117,21 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       { "@type": "ListItem", position: 3, name: product.name, item: `https://www.veyloskin.com/products/${product.slug}` },
     ],
   };
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  };
 
   return (
     <main className="product-page">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(productSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd(faqSchema) }} />
       <div className="site-container page-breadcrumb"><Link href="/">Home</Link><ChevronRight size={13} /><Link href="/shop">Shop</Link><ChevronRight size={13} /><span>{product.name}</span></div>
       <div className="site-container"><ProductPurchase product={product} /></div>
       <section className="product-value-section">

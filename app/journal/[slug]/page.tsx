@@ -3,12 +3,18 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
 import { getJournalPost, journalPosts } from "@/lib/journal";
+import { absoluteUrl } from "@/lib/seo";
 
 export function generateStaticParams() { return journalPosts.map((post) => ({ slug: post.slug })); }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const post = getJournalPost((await params).slug);
-  return post ? { title: post.title, description: post.excerpt, openGraph: { type: "article", title: post.title, description: post.excerpt } } : {};
+  return post ? {
+    title: post.title,
+    description: post.excerpt,
+    alternates: { canonical: absoluteUrl(`/journal/${post.slug}`) },
+    openGraph: { type: "article", url: absoluteUrl(`/journal/${post.slug}`), title: post.title, description: post.excerpt },
+  } : {};
 }
 
 export default async function JournalPostPage({ params }: { params: Promise<{ slug: string }> }) {

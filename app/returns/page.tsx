@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Returns, Cancellations and Refunds",
   description: "Veylo returns policy: a 30-day money-back guarantee, plus your rights under the Consumer Contracts Regulations 2013.",
+  alternates: { canonical: "/returns" },
 };
 
 export default function ReturnsPage() {

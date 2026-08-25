@@ -5,6 +5,7 @@ import { ArrowRight, Check } from "lucide-react";
 export const metadata: Metadata = {
   title: "Our technology",
   description: "A plain-English guide to the light, microcurrent, radiofrequency, IPL, ultrasonic and massage technologies used across the Veylo range.",
+  alternates: { canonical: "/technology" },
 };
 
 const technologies = [

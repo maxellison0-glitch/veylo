@@ -6,6 +6,7 @@ import { ShopCatalog } from "@/components/shop-catalog";
 export const metadata: Metadata = {
   title: "Shop at-home beauty tech",
   description: "The full Veylo range: red light devices, an LED mask and facial tools, with tracked UK delivery and a 30-day money-back guarantee.",
+  alternates: { canonical: "/shop" },
 };
 
 export default async function ShopPage({ searchParams }: { searchParams: Promise<{ q?: string; concern?: string }> }) {
