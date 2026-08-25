@@ -26,9 +26,10 @@ const CDN = "https://d8j0ntlcm91z4.cloudfront.net/user_3DZsX8XjGmMqL9IN6t2ItqOSe
  */
 const productImages: Record<string, string[]> = {
   "veylo-wand": [
-    `${CDN}/hf_20260823_175045_1485ed57-f4b8-4a93-a36e-91e2960359d3.png`,
-    `${CDN}/hf_20260824_184915_8add347d-ec7c-4d7e-bef0-12d46b6e969d.png`,
-    `${CDN}/hf_20260824_184915_efa8ab87-a0be-4312-89bb-46ac8a09f393.png`,
+    "/products/veylo-wand-hero.png",
+    "/products/veylo-wand-lifestyle-1.png",
+    "/products/veylo-wand-lifestyle-2.png",
+    "/products/veylo-wand-lifestyle-3.png",
   ],
   "lumen-mask": [
     `${CDN}/hf_20260823_175045_a02b71d8-5e87-4474-89d9-edc7872668f7.png`,
