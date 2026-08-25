@@ -8,8 +8,10 @@ import { useStore } from "./store-provider";
 
 const links = [
   { href: "/shop", label: "Shop" },
-  { href: "/products/veylo-wand", label: "The Veylo Wand" },
-  { href: "/about", label: "Our story" },
+  { href: "/collections/face", label: "Face" },
+  { href: "/collections/body", label: "Body" },
+  { href: "/collections/scalp-hair", label: "Scalp & Hair" },
+  { href: "/collections/bundles", label: "Bundles" },
 ];
 
 export function SiteHeader() {
@@ -74,9 +76,11 @@ export function SiteHeader() {
               <span>0{index + 1}</span>{link.label}
             </Link>
           ))}
-          <Link href="/contact" onClick={() => setMenuOpen(false)}><span>04</span>Contact</Link>
+          <Link href="/technology" onClick={() => setMenuOpen(false)}><span>06</span>Technology</Link>
+          <Link href="/about" onClick={() => setMenuOpen(false)}><span>07</span>Our story</Link>
+          <Link href="/contact" onClick={() => setMenuOpen(false)}><span>08</span>Contact</Link>
         </nav>
-        <p>Five minutes a day.<br />A calmer kind of beauty tech.</p>
+        <p>Beneath the surface.<br />Professional skin and body technology, at home.</p>
       </div>
     </>
   );

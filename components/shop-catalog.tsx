@@ -12,7 +12,7 @@ type Filters = {
 
 const emptyFilters: Filters = { concern: [], ptype: [] };
 
-const concernValues: Product["concern"][] = ["Fine lines", "Puffiness", "Dullness", "Tension", "Pain relief", "Recovery", "Complete ritual"];
+const concernValues: Product["concern"][] = ["Fine lines", "Puffiness", "Dullness", "Blemishes", "Tension", "Hair removal", "Pain relief", "Recovery", "Scalp care", "Complete ritual"];
 const typeValues: Product["ptype"][] = ["Device", "Accessory", "Set"];
 
 function ToggleGroup({
@@ -40,8 +40,11 @@ function ToggleGroup({
   );
 }
 
-export function ShopCatalog({ initialQuery = "" }: { initialQuery?: string }) {
-  const [filters, setFilters] = useState<Filters>(emptyFilters);
+export function ShopCatalog({ initialQuery = "", initialConcern = "" }: { initialQuery?: string; initialConcern?: string }) {
+  const [filters, setFilters] = useState<Filters>(() => ({
+    concern: concernValues.includes(initialConcern as Product["concern"]) ? [initialConcern] : [],
+    ptype: [],
+  }));
   const [sort, setSort] = useState("featured");
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 

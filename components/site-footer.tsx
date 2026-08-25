@@ -18,11 +18,11 @@ export function SiteFooter() {
       <div className="site-container footer-grid">
         <div className="footer-brand">
           <Logo inverse />
-          <p>Design-led at-home beauty tech, chosen and tested in the UK.</p>
+          <p>Professional-grade skin and body treatment devices, made clearer for considered use at home.</p>
         </div>
         <div className="footer-links">
-          <div><h3>Shop</h3><Link href="/shop">All products</Link><Link href="/products/veylo-wand">The Veylo Wand</Link><Link href="/products/glow-ritual">The Glow Ritual</Link></div>
-          <div><h3>Veylo</h3><Link href="/about">Our story</Link><Link href="/contact">Contact</Link><a href="mailto:hello@veyloskin.com">hello@veyloskin.com</a></div>
+          <div><h3>Shop</h3><Link href="/shop">All products</Link><Link href="/collections/face">Face</Link><Link href="/collections/body">Body</Link><Link href="/collections/scalp-hair">Scalp &amp; Hair</Link><Link href="/collections/bundles">Bundles</Link></div>
+          <div><h3>Veylo</h3><Link href="/technology">Our technology</Link><Link href="/about">Our story</Link><Link href="/contact">Contact</Link><a href="mailto:hello@veyloskin.com">hello@veyloskin.com</a></div>
           <div><h3>Help</h3><Link href="/delivery">Delivery</Link><Link href="/returns">Returns &amp; refunds</Link><Link href="/contact#faq">FAQs</Link></div>
         </div>
       </div>

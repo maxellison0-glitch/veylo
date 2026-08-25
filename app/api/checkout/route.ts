@@ -32,6 +32,14 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Cart is empty" }, { status: 400 });
   }
 
+  const unknownItem = items.find((item) => !products.some((product) => product.slug === item.slug));
+  if (unknownItem) {
+    return NextResponse.json(
+      { error: "One of the products in your bag could not be found." },
+      { status: 400 },
+    );
+  }
+
   const lineItems = items.map((item) => {
     const product = products.find((p) => p.slug === item.slug);
     if (!product) throw new Error(`Unknown product: ${item.slug}`);

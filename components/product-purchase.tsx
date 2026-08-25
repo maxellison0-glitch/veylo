@@ -48,7 +48,7 @@ export function ProductPurchase({ product }: { product: Product }) {
       </div>
 
       <div className="product-purchase-panel">
-        <div className="product-flag">New · Early access</div>
+        <div className="product-flag">Veylo collection</div>
         <span className="product-tagline">{product.tagline}</span>
         <h1>{product.name}</h1>
         <p className="product-strapline">{product.strapline}</p>
@@ -95,6 +95,8 @@ export function ProductPurchase({ product }: { product: Product }) {
           <details><summary>What&rsquo;s included</summary><ul>{product.features.map((feature) => <li key={feature}>{feature}</li>)}</ul></details>
           <details><summary>How to use</summary><p>{product.howTo}</p></details>
           <details><summary>Specs</summary><p>{product.specs}</p></details>
+          {product.technology?.length ? <details><summary>How the technology works</summary><ul>{product.technology.map((item) => <li key={item}>{item}</li>)}</ul></details> : null}
+          {product.useCases?.length ? <details><summary>Designed for</summary><ul>{product.useCases.map((item) => <li key={item}>{item}</li>)}</ul></details> : null}
         </div>
       </div>
     </div>

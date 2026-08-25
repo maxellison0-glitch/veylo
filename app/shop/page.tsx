@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "The full Veylo range: red light devices, an LED mask and facial tools, with tracked UK delivery and a 30-day money-back guarantee.",
 };
 
-export default async function ShopPage({ searchParams }: { searchParams: Promise<{ q?: string }> }) {
+export default async function ShopPage({ searchParams }: { searchParams: Promise<{ q?: string; concern?: string }> }) {
   const query = await searchParams;
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -26,9 +26,9 @@ export default async function ShopPage({ searchParams }: { searchParams: Promise
       <header className="site-container shop-hero">
         <span className="eyebrow">The range</span>
         <h1>Simple tools, <em>short rituals.</em></h1>
-        <p>Five products, chosen and tested against one bar: a visible-glow ritual in under ten minutes a day.</p>
+        <p>Explore focused tools for face, body and scalp, from everyday massage accessories to full light, microcurrent and recovery rituals.</p>
       </header>
-      <div className="site-container"><ShopCatalog initialQuery={query.q} /></div>
+      <div className="site-container"><ShopCatalog initialQuery={query.q} initialConcern={query.concern} /></div>
     </main>
   );
 }

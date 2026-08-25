@@ -1,6 +1,6 @@
 # Veylo — supplier & fulfilment map
 
-Verified 25 Aug 2026 on AliExpress (GBP, UK delivery quotes shown at checkout). All listings confirmed live with UK delivery Sep 02–07.
+Verified 25 Aug 2026 on AliExpress in GBP. Prices are promotional snapshots and must be rechecked when each customer order is fulfilled.
 
 ## Product → source → margin
 
@@ -14,6 +14,9 @@ Verified 25 Aug 2026 on AliExpress (GBP, UK delivery quotes shown at checkout). 
 | **Relief Belt** £69.99 | **1005008660925538** | £23.80, LED Therapy Life Store, 4.8★, 491 sold | ~£23.80 | **2.9×** | UK Plug variant. Free shipping, Sep 03–07. Max 1/order |
 | **Relief Ritual** £104.99 | Wand + Belt | = Wand + Relief Belt shipped together | ~£36.30 | **2.9×** | Two separate AliExpress orders in Phase 1 |
 | **Relief Duo** £104.99 | Belt × 2 | = 2× Relief Belt shipped together | ~£47.60 | **2.2×** | Two separate AliExpress Belt orders (max 1/order). Couples angle — 2nd belt half price |
+| **EyeRest Air Massager** £49.99 | **1005010439400335** | £12.81 shown, Beauty-Health Store, Hailicare, 4.9★, 700+ total sales | ~£12.81 | **3.9×** | Exact white variant. Air compression, heat, vibration and Bluetooth. Free shipping, Aug 31–Sep 08 |
+| **IceGlide IPL Handset** £89.99 | **1005006463920189** | From £26.56, LYSMOSKI Global Store, 4.7★, 1,000+ sold | ~£26.56+ | **up to 3.4×** | Exact **ICE PRO WHITE + UK Plug** variant. Final variant total must be checked at fulfilment. Free shipping, Sep 02–10 |
+| **ScalpRevive Four-Head Massager** £39.99 | **1005010379146256** | £15.31, Qn Beauty Choice Store, 4.9★, 1,000+ total sales | ~£15.31 | **2.6×** | Exact White variant. Four rotating silicone heads. Free shipping, Sep 02–10 |
 | **NEW: IR Panel** ~£195 | **1005008715945024** | £64.50, Cabpay brand, 4.9★, 191 sold, AliExpress Choice | ~£64.50 | **3.0×** | 312 LEDs (104×660nm + 208×850nm), 3-in-1 chip. Adjustable stand. UK Plug. Free shipping, Sep 02–05. Max 1/order. PENDING: Max approval to add |
 
 ## Fulfilment plan
@@ -40,6 +43,25 @@ Verified 25 Aug 2026 on AliExpress (GBP, UK delivery quotes shown at checkout). 
 
 **IR Panel (pending approval):** https://www.aliexpress.com/item/1005008715945024.html
 → Variant: "UK Plug"
+
+**EyeRest Air Massager:** https://www.aliexpress.com/item/1005010439400335.html
+→ Variant: "white"
+
+**IceGlide IPL Handset:** https://www.aliexpress.com/item/1005006463920189.html
+→ Variant: "ICE PRO WHITE" + "UK Plug"
+
+**ScalpRevive Four-Head Massager:** https://www.aliexpress.com/item/1005010379146256.html
+→ Variant: "White"
+
+## Saved supplier evidence and catalogue images
+
+The `original-*.png` files below are genuine images downloaded from the exact live listings above. The final catalogue images were generated with those originals as locked product references; the Veylo styling pass changes the setting and lighting, not the product model.
+
+| Product | Genuine supplier images | Reference-based Veylo catalogue image |
+|---|---|---|
+| EyeRest | `public/products/supplier/eye-massager-hailicare/original-hero.png` plus `original-2.png` and `original-3.png` | `public/products/eye-massager.png` |
+| IceGlide IPL | `public/products/supplier/ipl-ice-pro/original-hero.png` plus `original-2.png` and `original-3.png` | `public/products/ipl-ice-pro.png` |
+| ScalpRevive | `public/products/supplier/scalp-massager/original-hero.png` plus `original-2.png` and `original-3.png` | `public/products/scalp-massager.png` |
 
 ## Open decisions for Max
 

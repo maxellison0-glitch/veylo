@@ -60,6 +60,14 @@ const productImages: Record<string, string[]> = {
     `${CDN}/hf_20260824_184915_efa8ab87-a0be-4312-89bb-46ac8a09f393.png`,
     `${CDN}/hf_20260824_185851_bee8c1f7-3a13-4109-8680-3ec711b604dc.png`,
   ],
+  "relief-duo": [
+    `${CDN}/hf_20260824_144031_6bcddcea-237c-4692-ba62-e30c22c1fc68.png`,
+    `${CDN}/hf_20260824_185851_bee8c1f7-3a13-4109-8680-3ec711b604dc.png`,
+    `${CDN}/hf_20260824_185850_cef3199c-3ba7-4389-b21e-2053cc38f10e.png`,
+  ],
+  "ipl-hair-removal": ["/products/ipl-ice-pro.png"],
+  "scalprevive-massager": ["/products/scalp-massager.png"],
+  "eye-rest-massager": ["/products/eye-massager.png"],
 };
 
 /** Get a specific image URL for a product. */

@@ -32,7 +32,7 @@ export function CartDrawer() {
           <div className="empty-bag">
             <span className="empty-bag-icon"><ShoppingBag size={30} strokeWidth={1.2} /></span>
             <h3>Your bag is empty</h3>
-            <p>Start with the Veylo Wand, or browse the full range.</p>
+            <p>Browse face, body and scalp technology built around a clear purpose.</p>
             <Link className="button button-primary" href="/shop" onClick={() => setDrawerOpen(false)}>Shop the range</Link>
           </div>
         ) : (

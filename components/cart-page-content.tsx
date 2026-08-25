@@ -12,7 +12,7 @@ export function CartPageContent() {
 
   if (!items.length) {
     return (
-      <div className="cart-empty-state"><span>0 items</span><h2>Your bag is <em>empty.</em></h2><p>Five minutes a day starts with one device.</p><Link className="button button-primary" href="/shop">Shop the range</Link></div>
+      <div className="cart-empty-state"><span>0 items</span><h2>Your bag is <em>empty.</em></h2><p>Start with the concern, then choose the technology.</p><Link className="button button-primary" href="/shop">Shop the range</Link></div>
     );
   }
 

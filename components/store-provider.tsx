@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import type { Product } from "@/lib/catalog";
+import { products, type Product } from "@/lib/catalog";
 import { trackAddToCart } from "@/lib/tracking";
 
 export type CartItem = {
@@ -45,7 +45,13 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     const syncSavedCart = () => {
       try {
         const saved = window.localStorage.getItem("veylo-cart");
-        if (saved) setItems(JSON.parse(saved) as CartItem[]);
+        if (saved) {
+          const parsed = JSON.parse(saved) as CartItem[];
+          setItems(parsed.filter((item) => {
+            const product = products.find((entry) => entry.slug === item.slug);
+            return Boolean(product);
+          }));
+        }
       } catch {
         window.localStorage.removeItem("veylo-cart");
       } finally {

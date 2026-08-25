@@ -21,22 +21,22 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     metadataBase: new URL(origin),
-    title: { default: "Veylo — at-home beauty tech", template: "%s | Veylo" },
-    description: "Design-led at-home beauty tech from the UK. Simple devices, honest guidance and rituals that take minutes.",
+    title: { default: "Veylo — beneath the surface", template: "%s | Veylo" },
+    description: "Professional skin and body treatment technology, made clearer for use at home. Explore Veylo devices for face, body and scalp rituals.",
     applicationName: "Veylo",
-    keywords: ["at-home beauty tech", "red light therapy device UK", "LED face mask UK", "facial massage tools", "beauty devices UK"],
+    keywords: ["at-home skin technology UK", "red light therapy device UK", "LED face mask UK", "body recovery device", "scalp massager UK", "beauty devices UK"],
     openGraph: {
       type: "website",
       locale: "en_GB",
       siteName: "Veylo",
-      title: "Veylo — at-home beauty tech",
-      description: "Design-led at-home beauty tech from the UK. Simple devices, honest guidance and rituals that take minutes.",
-      images: [{ url: socialImage, width: 1200, height: 630, alt: "Veylo — at-home beauty tech" }],
+      title: "Veylo — beneath the surface",
+      description: "Professional skin and body treatment technology, made clearer for use at home.",
+      images: [{ url: socialImage, width: 1200, height: 630, alt: "Veylo — beneath the surface" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Veylo — at-home beauty tech",
-      description: "Design-led at-home beauty tech from the UK. Simple devices, honest guidance and rituals that take minutes.",
+      title: "Veylo — beneath the surface",
+      description: "Professional skin and body treatment technology, made clearer for use at home.",
       images: [socialImage],
     },
     icons: {
