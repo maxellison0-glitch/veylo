@@ -222,7 +222,7 @@ const existingProducts: Product[] = [
     slug: "relief-ritual",
     name: "The Relief Ritual",
     tagline: "Wand + Belt",
-    image: "https://d8j0ntlcm91z4.cloudfront.net/user_3DZsX8XjGmMqL9IN6t2ItqOSeH9/hf_20260824_144031_6bcddcea-237c-4692-ba62-e30c22c1fc68.png",
+    image: "/products/relief-ritual.png",
     strapline: "The Veylo Wand for your face and the Relief Belt for your body — one morning-and-evening ritual.",
     description:
       "Face and body in one box: the Veylo Wand for a five-minute facial and the Relief Belt for twenty minutes of infrared therapy on sore muscles and joints. Together, the set saves £15 on the separate prices.",
@@ -249,14 +249,14 @@ const existingProducts: Product[] = [
   },
   {
     slug: "relief-duo",
-    name: "The Relief Duo",
+    name: "Couples Relief Pair",
     tagline: "Two belts, one ritual",
-    image: "https://d8j0ntlcm91z4.cloudfront.net/user_3DZsX8XjGmMqL9IN6t2ItqOSeH9/hf_20260824_144031_6bcddcea-237c-4692-ba62-e30c22c1fc68.png",
+    image: "/products/couples-relief-pair.png",
     strapline: "Two Relief Belts — one for you, one for them. Recovery is better together.",
     description:
       "Two Relief Belts at one price. The same 120-LED infrared therapy, now for both of you. Settle onto the sofa, press start, and spend twenty minutes recovering together. Save £19.99 against buying separately.",
     longDescription:
-      "The Relief Duo is for the couple who both come home tired. Two full-sized Relief Belts, each with 120 LEDs delivering 660nm red light and 850nm near-infrared. Wrap one around your lower back, hand the other to your partner for their knees. Twenty minutes on the sofa and you are both done. No booking, no waiting room and no taking turns.",
+      "The Couples Relief Pair is for two people who both come home tired. Two full-sized Relief Belts, each with 120 LEDs delivering 660nm red light and 850nm near-infrared. Wrap one around your lower back, hand the other to your partner for their knees. Twenty minutes on the sofa and you are both done. No booking, no waiting room and no taking turns.",
     howTo:
       "Each person wraps a belt around the area that needs it most — lower back, knee, shoulder or hip. Secure the velcro straps, plug in, and switch on. Relax together for twenty minutes; both belts switch themselves off. Use daily or as needed.",
     specs: "Two Relief Belts included. Each: 120 LEDs (660nm + 850nm), 28 × 19 × 6cm, 500g, UK three-pin plug, velcro strap, 20-minute auto timer.",
@@ -266,7 +266,7 @@ const existingProducts: Product[] = [
     concern: "Recovery",
     ptype: "Set",
     finishes: [{ name: "Charcoal", hex: "#2d2d2d" }],
-    variants: [{ label: "Relief Duo", note: "Two belts, two plugs", price: 119.99 }],
+    variants: [{ label: "Couples Relief Pair", note: "Two belts, two plugs", price: 119.99 }],
     features: [
       "Two full-sized Relief Belts",
       "120 LEDs each — 660nm red + 850nm near-infrared",
