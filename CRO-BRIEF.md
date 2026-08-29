@@ -73,7 +73,8 @@ Files: `app/globals.css` (lines ~317, ~348, ~364, ~378), `components/checkout-fo
 
 ### 2. Storage (`app/api/newsletter/route.ts`)
 - Extend the existing route: accept `{ email, source }` (`welcome-popup` | `footer`).
-- Add the contact to a **Resend Audience** (`resend.contacts.create({ audienceId: process.env.RESEND_AUDIENCE_ID, email })`) so a real list accumulates — keep the existing notification email to hello@ as well.
+- Add the contact to the account's default Resend Audience so a real list accumulates — resolve the audience id at runtime via `resend.audiences.list()` (first result; cache it in module scope), then `resend.contacts.create({ audienceId, email })`. No new env var. Keep the existing notification email to hello@ as well.
+- STATUS 29 Aug: veyloskin.com is VERIFIED in Resend (DKIM/SPF live) — emails from hello@veyloskin.com deliver. The default audience ("General") exists with 0 contacts.
 - On `source === "welcome-popup"`, send the welcome email (from `hello@veyloskin.com`): subject `Your 10% is waiting` — code, 3 featured products, free-delivery-over-£40 reminder, plain editorial styling.
 - Handle duplicates gracefully (already subscribed → still show the code client-side).
 
