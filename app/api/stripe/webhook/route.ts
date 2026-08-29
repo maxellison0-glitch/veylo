@@ -10,6 +10,7 @@ const PURCHASE_EVENTS = new Set([
   "checkout.session.completed",
   "checkout.session.async_payment_succeeded",
 ]);
+let loggedMissingMetaToken = false;
 
 export async function POST(request: NextRequest) {
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
@@ -36,7 +37,14 @@ export async function POST(request: NextRequest) {
     const session = event.data.object as Stripe.Checkout.Session;
 
     if (session.payment_status === "paid") {
-      await sendMetaPurchase(session, event.created);
+      if (!process.env.META_CONVERSIONS_API_ACCESS_TOKEN) {
+        if (!loggedMissingMetaToken) {
+          console.warn("Meta Conversions API token is unset; skipping server-side Purchase events.");
+          loggedMissingMetaToken = true;
+        }
+      } else {
+        await sendMetaPurchase(session, event.created);
+      }
     }
   }
 
