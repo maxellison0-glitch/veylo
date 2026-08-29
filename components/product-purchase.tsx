@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { formatPrice, type Product } from "@/lib/catalog";
 import { trackViewContent } from "@/lib/tracking";
 import { useCookieConsent } from "./cookie-consent";
+import { PaymentLogos } from "./payment-logos";
 import { ProductImage, getProductImageCount } from "./product-art";
 import { useStore } from "./store-provider";
 
@@ -98,6 +99,7 @@ export function ProductPurchase({ product }: { product: Product }) {
           <button ref={addButtonRef} className="button button-primary add-to-bag" onClick={addSelectedProduct}>Add to bag · {formatPrice(variant.price * quantity)}</button>
           <button className={`favourite-button ${favourite ? "is-selected" : ""}`} onClick={() => setFavourite((value) => !value)} aria-label={favourite ? "Remove from favourites" : "Add to favourites"}><Heart size={20} fill={favourite ? "currentColor" : "none"} /></button>
         </div>
+        <PaymentLogos />
 
         <div className="purchase-promises">
           <span><Truck size={18} /> {product.leadTime}</span>
