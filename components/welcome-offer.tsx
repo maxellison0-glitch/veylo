@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FormEvent, KeyboardEvent, useCallback, useEffect, useRef, useState } from "react";
+import { useCookieConsent } from "./cookie-consent";
 import { trackLead } from "@/lib/tracking";
 import { parseWelcomeOfferState, shouldSuppressWelcomeOffer, WELCOME_OFFER_STORAGE_KEY } from "@/lib/welcome-offer";
 
@@ -10,6 +11,7 @@ type OfferStatus = "idle" | "sending" | "claimed" | "error";
 
 export function WelcomeOffer() {
   const pathname = usePathname();
+  const { consent } = useCookieConsent();
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState<OfferStatus>("idle");
   const panelRef = useRef<HTMLDivElement>(null);
@@ -31,6 +33,7 @@ export function WelcomeOffer() {
   }, []);
 
   useEffect(() => {
+    if (consent === "undecided") return;
     if (excluded || shouldSuppressWelcomeOffer(parseWelcomeOfferState(window.localStorage.getItem(WELCOME_OFFER_STORAGE_KEY)))) return;
 
     const timeout = window.setTimeout(show, 8_000);
@@ -49,7 +52,7 @@ export function WelcomeOffer() {
       window.removeEventListener("scroll", onScroll);
       document.removeEventListener("mouseleave", onMouseLeave);
     };
-  }, [excluded, show]);
+  }, [consent, excluded, show]);
 
   useEffect(() => {
     if (!open) return;
@@ -116,18 +119,18 @@ export function WelcomeOffer() {
             <h2 id="welcome-title">Your code:</h2>
             <strong>VEYLO10</strong>
             <button className="button button-secondary" type="button" onClick={copyCode}>Copy code</button>
-            <p>Applied at checkout â€” paste it in the promo field. Also sent to your inbox.</p>
+            <p>Applied at checkout — paste it in the promo field. Also sent to your inbox.</p>
             <Link className="button button-primary" href="/shop" onClick={() => setOpen(false)}>Shop the range</Link>
           </div>
         ) : (
           <>
             <span className="eyebrow">Welcome to Veylo</span>
             <h2 id="welcome-title">10% off your first ritual.</h2>
-            <p>Join the list and we&rsquo;ll take 10% off your first order â€” plus early access to new devices and honest guides on what actually works.</p>
+            <p>Join the list and we&rsquo;ll take 10% off your first order — plus early access to new devices and honest guides on what actually works.</p>
             <form onSubmit={handleSubmit}>
               <label className="sr-only" htmlFor="welcome-email">Email address</label>
               <input ref={emailRef} id="welcome-email" name="email" type="email" autoComplete="email" required placeholder="Email address" disabled={status === "sending"} />
-              <button className="button button-primary" type="submit" disabled={status === "sending"}>{status === "sending" ? "Claimingâ€¦" : "Claim 10% off"}</button>
+              <button className="button button-primary" type="submit" disabled={status === "sending"}>{status === "sending" ? "Claiming…" : "Claim 10% off"}</button>
             </form>
             {status === "error" && <p className="welcome-error" role="alert">Something went wrong. Please try again.</p>}
             <button className="welcome-dismiss" type="button" onClick={dismiss}>No thanks, full price is fine.</button>

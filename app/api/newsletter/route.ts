@@ -30,7 +30,7 @@ Begin with LuminaPro LED Face Mask: https://www.veyloskin.com/products/lumen-mas
 The Relief Belt: https://www.veyloskin.com/products/relief-belt
 The Veylo Wand: https://www.veyloskin.com/products/veylo-wand
 
-Free UK delivery over Â£40. Dispatched within 48 hours, fully tracked.`,
+Free UK delivery over £40. Dispatched within 48 hours, fully tracked.`,
   html: `<div style="margin:0 auto;max-width:560px;background:#faf7f4;color:#241f1d;padding:48px 32px;font-family:Arial,sans-serif;line-height:1.6">
     <p style="margin:0 0 18px;color:#9b5f50;font-size:11px;letter-spacing:.14em;text-transform:uppercase">Welcome to Veylo</p>
     <h1 style="margin:0 0 22px;font-family:Georgia,serif;font-size:42px;font-weight:400;line-height:1">Your 10% is waiting.</h1>
@@ -40,7 +40,7 @@ Free UK delivery over Â£40. Dispatched within 48 hours, fully tracked.`,
     <p style="margin:0 0 10px"><a style="color:#241f1d" href="https://www.veyloskin.com/products/lumen-mask">LuminaPro LED Face Mask</a></p>
     <p style="margin:0 0 10px"><a style="color:#241f1d" href="https://www.veyloskin.com/products/relief-belt">The Relief Belt</a></p>
     <p style="margin:0 0 28px"><a style="color:#241f1d" href="https://www.veyloskin.com/products/veylo-wand">The Veylo Wand</a></p>
-    <p style="margin:0;color:#6e625d;font-size:13px">Free UK delivery over Â£40. Dispatched within 48 hours, fully tracked.</p>
+    <p style="margin:0;color:#6e625d;font-size:13px">Free UK delivery over £40. Dispatched within 48 hours, fully tracked.</p>
   </div>`,
 };
 

@@ -63,7 +63,7 @@ export function CartDrawer() {
                   </div>
                 </article>
               ))}
-              {bundleItem && <p className="drawer-bundle-hint">Add the {bundleItem.slug === "veylo-wand" ? "Relief Belt" : "Veylo Wand"} as <Link href="/products/relief-ritual" onClick={() => setDrawerOpen(false)}>The Relief Ritual</Link> and save Â£15.</p>}
+              {bundleItem && <p className="drawer-bundle-hint">Add the {bundleItem.slug === "veylo-wand" ? "Relief Belt" : "Veylo Wand"} as <Link href="/products/relief-ritual" onClick={() => setDrawerOpen(false)}>The Relief Ritual</Link> and save £15.</p>}
               {crossSell && (
                 <div className="drawer-cross-sell">
                   <ProductImage slug={crossSell.slug} name={crossSell.name} finish={crossSell.finishes[0].hex} alt={crossSell.name} sizes="64px" />
