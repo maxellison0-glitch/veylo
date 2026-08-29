@@ -120,4 +120,9 @@ export function trackPurchase(value: number, transactionId?: string) {
   });
 }
 
+export function trackLead() {
+  window.fbq?.("track", "Lead");
+  window.gtag?.("event", "generate_lead");
+}
+
 export {};

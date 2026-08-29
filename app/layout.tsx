@@ -7,6 +7,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { StoreProvider } from "@/components/store-provider";
 import { TrackingPixels } from "@/components/tracking-pixels";
+import { WelcomeOffer } from "@/components/welcome-offer";
 import { DEFAULT_OG_IMAGE, SITE_URL } from "@/lib/seo";
 import "./globals.css";
 
@@ -75,6 +76,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             {children}
             <SiteFooter />
             <CartDrawer />
+            <WelcomeOffer />
           </CookieConsentProvider>
         </StoreProvider>
       </body>
