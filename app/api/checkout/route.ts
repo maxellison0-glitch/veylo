@@ -72,10 +72,6 @@ export async function POST(request: NextRequest) {
               type: "fixed_amount" as const,
               fixed_amount: { amount: 0, currency: "gbp" },
               display_name: "Free tracked UK delivery",
-              delivery_estimate: {
-                minimum: { unit: "business_day" as const, value: 4 },
-                maximum: { unit: "business_day" as const, value: 7 },
-              },
             },
           },
         ]
@@ -85,10 +81,6 @@ export async function POST(request: NextRequest) {
               type: "fixed_amount" as const,
               fixed_amount: { amount: 299, currency: "gbp" },
               display_name: "Tracked UK delivery",
-              delivery_estimate: {
-                minimum: { unit: "business_day" as const, value: 4 },
-                maximum: { unit: "business_day" as const, value: 7 },
-              },
             },
           },
         ];

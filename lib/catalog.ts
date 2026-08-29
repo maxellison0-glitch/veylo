@@ -46,7 +46,7 @@ const blush: Finish = { name: "Blush", hex: "#e6c3b8" };
 const frost: Finish = { name: "Frost", hex: "#dbe4e4" };
 const stone: Finish = { name: "Stone", hex: "#cfc8bf" };
 
-const standardLeadTime = "Tracked UK delivery, 4–7 working days";
+const standardLeadTime = "Dispatched within 48 hours, fully tracked";
 
 const existingProducts: Product[] = [
   {
@@ -485,7 +485,7 @@ const verifiedLaunchProducts: Product[] = [
     finishes: [pearl],
     variants: [{ label: "ICE PRO WHITE", note: "Ice cooling · UK plug", price: 89.99 }],
     features: ["16J IPL output", "Ice-cooling contact surface", "Compact face-and-body handset", "ICE PRO WHITE finish", "UK three-pin plug"],
-    leadTime: "Tracked UK delivery, typically 7–12 working days",
+    leadTime: "Tracked UK delivery with email updates at every step",
     technology: ["Intense pulsed light targets pigment in eligible hair follicles.", "A consistent schedule matters more than a single session."],
     useCases: ["Legs and arms", "Underarms", "Suitable facial areas after checking the supplied guide"],
   },
@@ -506,7 +506,7 @@ const verifiedLaunchProducts: Product[] = [
     finishes: [pearl],
     variants: [{ label: "White", note: "Four heads · rechargeable", price: 39.99 }],
     features: ["Four rotating massage heads", "Flexible silicone massage nubs", "One-button control", "Rechargeable cordless body", "Suitable for scalp, neck and shoulders"],
-    leadTime: "Tracked UK delivery, typically 7–12 working days",
+    leadTime: "Tracked UK delivery with email updates at every step",
     technology: ["Four motorised heads provide mechanical massage without relying on unproven hair-growth claims."],
     useCases: ["Dry scalp massage", "Neck and shoulder massage", "Evening wind-down"],
   },
@@ -527,7 +527,7 @@ const verifiedLaunchProducts: Product[] = [
     finishes: [pearl],
     variants: [{ label: "White", note: "Rechargeable · Bluetooth", price: 49.99 }],
     features: ["Airbag compression", "Gentle warming mode", "Vibration massage", "Bluetooth audio", "Foldable rechargeable design"],
-    leadTime: "Tracked UK delivery, typically 7–12 working days",
+    leadTime: "Tracked UK delivery with email updates at every step",
     technology: ["Air pressure, warmth and vibration provide a non-medical relaxation massage around the eye area."],
     useCases: ["Screen-time wind-down", "Evening relaxation", "Travel ritual"],
   },
