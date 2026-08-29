@@ -204,6 +204,7 @@ const existingProducts: Product[] = [
       "Place the belt against the area you want to treat — lower back, knee, shoulder or hip. Secure the velcro strap so the LEDs sit flat against the skin or thin clothing. Plug in and switch on. Relax for twenty minutes; the belt switches itself off. Use daily or as needed.",
     specs: "120 LEDs (660nm + 850nm). 28 × 19 × 6cm. 500g. UK three-pin plug. Velcro strap, one size. 20-minute auto timer.",
     price: 69.99,
+    badge: "Bestseller",
     concern: "Pain relief",
     ptype: "Device",
     finishes: [{ name: "Charcoal", hex: "#2d2d2d" }],
@@ -534,6 +535,20 @@ const verifiedLaunchProducts: Product[] = [
 ];
 
 export const products: Product[] = [...existingProducts, ...verifiedLaunchProducts];
+
+export const featuredOrder = [
+  "lumen-mask",
+  "relief-belt",
+  "ipl-hair-removal",
+  "veylo-wand",
+  "eye-rest-massager",
+  "scalprevive-massager",
+  "sculpt-set",
+  "cool-roller",
+  "relief-duo",
+  "relief-ritual",
+  "glow-ritual",
+] as const;
 
 const collectionProducts: Record<ProductCollection, string[]> = {
   Face: [
