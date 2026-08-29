@@ -125,6 +125,9 @@ export async function POST(request: NextRequest) {
     shipping_address_collection: { allowed_countries: ["GB"] },
     shipping_options: shippingOptions,
     allow_promotion_codes: true,
+    // UK-only store: currency conversion adds a broken narrow-screen selector and a buyer FX fee.
+    adaptive_pricing: { enabled: false },
+    locale: "en-GB",
     return_url: `${request.nextUrl.origin}/checkout/return?session_id={CHECKOUT_SESSION_ID}`,
     metadata: trackingMetadata,
   });
