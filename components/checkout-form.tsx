@@ -75,9 +75,12 @@ export function CheckoutForm() {
       <div className="checkout-form">
         <Link className="checkout-back" href="/cart"><ArrowLeft size={15} /> Return to bag</Link>
         <header><span className="eyebrow">Secure checkout</span><h1>Almost <em>home.</em></h1></header>
-        <EmbeddedCheckoutProvider stripe={stripePromise} options={{ fetchClientSecret }}>
-          <EmbeddedCheckout />
-        </EmbeddedCheckoutProvider>
+        <div className="checkout-embed">
+          <EmbeddedCheckoutProvider stripe={stripePromise} options={{ fetchClientSecret }}>
+            <EmbeddedCheckout />
+          </EmbeddedCheckoutProvider>
+        </div>
+        <p className="checkout-reassurance">30-day money-back guarantee · dispatched within 48h · Stripe secure</p>
       </div>
     </div>
   );
