@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { formatPrice, type Product } from "@/lib/catalog";
 import { trackViewContent } from "@/lib/tracking";
 import { useCookieConsent } from "./cookie-consent";
+import { PaymentLogos } from "./payment-logos";
 import { ProductImage, getProductImageCount } from "./product-art";
 import { useStore } from "./store-provider";
 
@@ -14,7 +15,9 @@ export function ProductPurchase({ product }: { product: Product }) {
   const [quantity, setQuantity] = useState(1);
   const [view, setView] = useState(0);
   const [favourite, setFavourite] = useState(false);
+  const [stickyVisible, setStickyVisible] = useState(false);
   const trackedVariant = useRef<string | null>(null);
+  const addButtonRef = useRef<HTMLButtonElement>(null);
   const { consent } = useCookieConsent();
   const { addItem } = useStore();
   const imageCount = getProductImageCount(product.slug);
@@ -29,6 +32,18 @@ export function ProductPurchase({ product }: { product: Product }) {
       quantity: 1,
     });
   }, [consent, product.name, product.slug, variant.label, variant.price]);
+
+  useEffect(() => {
+    const button = addButtonRef.current;
+    if (!button) return;
+    const observer = new IntersectionObserver(([entry]) => setStickyVisible(!entry.isIntersecting));
+    observer.observe(button);
+    return () => observer.disconnect();
+  }, []);
+
+  function addSelectedProduct() {
+    addItem(product, { variant: variant.label, finish: finish.name, quantity });
+  }
 
   return (
     <div className="product-detail-grid">
@@ -81,9 +96,10 @@ export function ProductPurchase({ product }: { product: Product }) {
           <div className="quantity-control large-quantity" aria-label="Quantity">
             <button onClick={() => setQuantity(Math.max(1, quantity - 1))} aria-label="Decrease quantity"><Minus size={15} /></button><span>{quantity}</span><button onClick={() => setQuantity(quantity + 1)} aria-label="Increase quantity"><Plus size={15} /></button>
           </div>
-          <button className="button button-primary add-to-bag" onClick={() => addItem(product, { variant: variant.label, finish: finish.name, quantity })}>Add to bag · {formatPrice(variant.price * quantity)}</button>
+          <button ref={addButtonRef} className="button button-primary add-to-bag" onClick={addSelectedProduct}>Add to bag · {formatPrice(variant.price * quantity)}</button>
           <button className={`favourite-button ${favourite ? "is-selected" : ""}`} onClick={() => setFavourite((value) => !value)} aria-label={favourite ? "Remove from favourites" : "Add to favourites"}><Heart size={20} fill={favourite ? "currentColor" : "none"} /></button>
         </div>
+        <PaymentLogos />
 
         <div className="purchase-promises">
           <span><Truck size={18} /> {product.leadTime}</span>
@@ -98,6 +114,10 @@ export function ProductPurchase({ product }: { product: Product }) {
           {product.technology?.length ? <details><summary>How the technology works</summary><ul>{product.technology.map((item) => <li key={item}>{item}</li>)}</ul></details> : null}
           {product.useCases?.length ? <details><summary>Designed for</summary><ul>{product.useCases.map((item) => <li key={item}>{item}</li>)}</ul></details> : null}
         </div>
+      </div>
+      <div className={`mobile-pdp-bar ${stickyVisible ? "is-visible" : ""}`} aria-hidden={!stickyVisible}>
+        <div><span>{product.name}</span><strong>{formatPrice(variant.price * quantity)}</strong></div>
+        <button className="button button-primary" onClick={addSelectedProduct}>Add to bag</button>
       </div>
     </div>
   );

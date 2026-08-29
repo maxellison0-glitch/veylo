@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { EmbeddedCheckoutProvider, EmbeddedCheckout } from "@stripe/react-stripe-js";
 import Link from "next/link";
@@ -8,6 +8,7 @@ import { ArrowLeft } from "lucide-react";
 import { useStore } from "./store-provider";
 import { useCookieConsent } from "./cookie-consent";
 import { trackBeginCheckout } from "@/lib/tracking";
+import { parseWelcomeOfferState, WELCOME_OFFER_STORAGE_KEY } from "@/lib/welcome-offer";
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
@@ -15,6 +16,11 @@ export function CheckoutForm() {
   const { items, subtotal } = useStore();
   const { consent } = useCookieConsent();
   const tracked = useRef(false);
+  const [hasWelcomeCode, setHasWelcomeCode] = useState(false);
+
+  useEffect(() => {
+    setHasWelcomeCode(parseWelcomeOfferState(window.localStorage.getItem(WELCOME_OFFER_STORAGE_KEY))?.status === "claimed");
+  }, []);
 
   useEffect(() => {
     if (items.length && !tracked.current) {
@@ -75,9 +81,13 @@ export function CheckoutForm() {
       <div className="checkout-form">
         <Link className="checkout-back" href="/cart"><ArrowLeft size={15} /> Return to bag</Link>
         <header><span className="eyebrow">Secure checkout</span><h1>Almost <em>home.</em></h1></header>
-        <EmbeddedCheckoutProvider stripe={stripePromise} options={{ fetchClientSecret }}>
-          <EmbeddedCheckout />
-        </EmbeddedCheckoutProvider>
+        {hasWelcomeCode && <p className="checkout-code-nudge">Have your VEYLO10 code? Add it in the promo field below.</p>}
+        <div className="checkout-embed">
+          <EmbeddedCheckoutProvider stripe={stripePromise} options={{ fetchClientSecret }}>
+            <EmbeddedCheckout />
+          </EmbeddedCheckoutProvider>
+        </div>
+        <p className="checkout-reassurance">30-day money-back guarantee · dispatched within 48h · Stripe secure</p>
       </div>
     </div>
   );

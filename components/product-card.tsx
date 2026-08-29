@@ -7,7 +7,7 @@ import { formatPrice, type Product } from "@/lib/catalog";
 import { ProductImage } from "./product-art";
 import { useStore } from "./store-provider";
 
-export function ProductCard({ product, index = 0 }: { product: Product; index?: number }) {
+export function ProductCard({ product, index = 0, priority = false }: { product: Product; index?: number; priority?: boolean }) {
   const [finish, setFinish] = useState(product.finishes[0]);
   const [added, setAdded] = useState(false);
   const { addItem } = useStore();
@@ -23,10 +23,10 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
       <div className="product-card-visual">
         {product.badge && <span className="product-badge">{product.badge}</span>}
         <Link href={`/products/${product.slug}`} aria-label={`View ${product.name}`}>
-          <ProductImage slug={product.slug} name={product.name} finish={finish.hex} alt={`${product.name} in ${finish.name}`} />
+          <ProductImage slug={product.slug} name={product.name} finish={finish.hex} alt={`${product.name} in ${finish.name}`} priority={priority} sizes="(max-width: 540px) 50vw, (max-width: 800px) 50vw, 25vw" />
         </Link>
         <button className="quick-add" onClick={quickAdd} aria-label={`Quick add ${product.name}`}>
-          <Plus size={17} strokeWidth={1.7} /> {added ? "Added" : "Quick add"}
+          <Plus size={17} strokeWidth={1.7} /> <span>{added ? "Added" : "Quick add"}</span>
         </button>
       </div>
       <div className="product-card-info">

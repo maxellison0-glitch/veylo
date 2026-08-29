@@ -2,12 +2,16 @@
 
 import Link from "next/link";
 import { Minus, Plus, ShoppingBag, Trash2, X } from "lucide-react";
-import { formatPrice } from "@/lib/catalog";
+import { formatPrice, products } from "@/lib/catalog";
 import { ProductImage } from "./product-art";
 import { useStore } from "./store-provider";
 
 export function CartDrawer() {
-  const { items, subtotal, drawerOpen, setDrawerOpen, updateQuantity, removeItem } = useStore();
+  const { items, subtotal, drawerOpen, setDrawerOpen, addItem, updateQuantity, removeItem } = useStore();
+  const crossSell = products
+    .filter((product) => ["cool-roller", "sculpt-set"].includes(product.slug) && !items.some((item) => item.slug === product.slug))
+    .sort((a, b) => a.price - b.price)[0];
+  const bundleItem = items.length === 1 && items[0].quantity === 1 && ["veylo-wand", "relief-belt"].includes(items[0].slug) ? items[0] : null;
 
   return (
     <>
@@ -38,6 +42,7 @@ export function CartDrawer() {
         ) : (
           <>
             <div className="drawer-items">
+              <p className="drawer-ready">{items.length === 1 ? `Your ${items[0].name.replace(/^The /, "")} is ready to dispatch.` : "Your rituals are ready to dispatch."}</p>
               {items.map((item) => (
                 <article className="drawer-item" key={item.id}>
                   <Link href={`/products/${item.slug}`} onClick={() => setDrawerOpen(false)}>
@@ -58,8 +63,20 @@ export function CartDrawer() {
                   </div>
                 </article>
               ))}
+              {bundleItem && <p className="drawer-bundle-hint">Add the {bundleItem.slug === "veylo-wand" ? "Relief Belt" : "Veylo Wand"} as <Link href="/products/relief-ritual" onClick={() => setDrawerOpen(false)}>The Relief Ritual</Link> and save £15.</p>}
+              {crossSell && (
+                <div className="drawer-cross-sell">
+                  <ProductImage slug={crossSell.slug} name={crossSell.name} finish={crossSell.finishes[0].hex} alt={crossSell.name} sizes="64px" />
+                  <div><span>Complete the ritual</span><strong>{crossSell.name}</strong><small>{formatPrice(crossSell.price)}</small></div>
+                  <button type="button" onClick={() => addItem(crossSell)} aria-label={`Add ${crossSell.name}`}>+ Add</button>
+                </div>
+              )}
             </div>
             <div className="drawer-footer">
+              <div className="delivery-progress">
+                <p>{subtotal < 40 ? <>You&rsquo;re {formatPrice(40 - subtotal)} away from free UK delivery.</> : <>You&rsquo;ve unlocked free UK delivery.</>}</p>
+                <span><i style={{ width: `${Math.min(100, (subtotal / 40) * 100)}%` }} /></span>
+              </div>
               <div className="drawer-subtotal"><span>Subtotal</span><strong>{formatPrice(subtotal)}</strong></div>
               <p>UK delivery calculated at checkout. Free over £40.</p>
               <Link className="button button-primary button-wide" href="/checkout" onClick={() => setDrawerOpen(false)}>Checkout</Link>

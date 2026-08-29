@@ -2,7 +2,7 @@
 
 import { SlidersHorizontal, X } from "lucide-react";
 import { useMemo, useState } from "react";
-import { products, type Product } from "@/lib/catalog";
+import { featuredOrder, products, type Product } from "@/lib/catalog";
 import { ProductCard } from "./product-card";
 
 type Filters = {
@@ -68,7 +68,7 @@ export function ShopCatalog({ initialQuery = "", initialConcern = "" }: { initia
       if (sort === "price-asc") return a.price - b.price;
       if (sort === "price-desc") return b.price - a.price;
       if (sort === "name") return a.name.localeCompare(b.name);
-      return Number(Boolean(b.badge)) - Number(Boolean(a.badge));
+      return featuredOrder.indexOf(a.slug as (typeof featuredOrder)[number]) - featuredOrder.indexOf(b.slug as (typeof featuredOrder)[number]);
     });
   }, [filters, sort, initialQuery]);
 
@@ -97,7 +97,7 @@ export function ShopCatalog({ initialQuery = "", initialConcern = "" }: { initia
         {result.length ? (
           <>
             {singles.length > 0 && (
-              <div className="product-grid shop-product-grid">{singles.map((product, index) => <ProductCard product={product} index={index} key={product.slug} />)}</div>
+              <div className="product-grid shop-product-grid">{singles.map((product, index) => <ProductCard product={product} index={index} priority={index < 4} key={product.slug} />)}</div>
             )}
             {combos.length > 0 && (
               <div className="combo-section">
