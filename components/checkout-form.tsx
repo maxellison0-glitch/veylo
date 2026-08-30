@@ -1,26 +1,18 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { loadStripe } from "@stripe/stripe-js";
-import { EmbeddedCheckoutProvider, EmbeddedCheckout } from "@stripe/react-stripe-js";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { useStore } from "./store-provider";
 import { useCookieConsent } from "./cookie-consent";
 import { trackBeginCheckout } from "@/lib/tracking";
-import { parseWelcomeOfferState, WELCOME_OFFER_STORAGE_KEY } from "@/lib/welcome-offer";
-
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
 export function CheckoutForm() {
   const { items, subtotal } = useStore();
   const { consent } = useCookieConsent();
   const tracked = useRef(false);
-  const [hasWelcomeCode, setHasWelcomeCode] = useState(false);
-
-  useEffect(() => {
-    setHasWelcomeCode(parseWelcomeOfferState(window.localStorage.getItem(WELCOME_OFFER_STORAGE_KEY))?.status === "claimed");
-  }, []);
+  const redirecting = useRef(false);
+  const [failed, setFailed] = useState(false);
 
   useEffect(() => {
     if (items.length && !tracked.current) {
@@ -29,7 +21,7 @@ export function CheckoutForm() {
     }
   }, [items, subtotal]);
 
-  const fetchClientSecret = useCallback(async () => {
+  const beginCheckout = useCallback(async () => {
     const readCookie = (name: string) => {
       const prefix = `${name}=`;
       const value = document.cookie
@@ -58,13 +50,21 @@ export function CheckoutForm() {
     });
 
     const data = await response.json();
-    if (!response.ok || !data.clientSecret) {
+    if (!response.ok || !data.url) {
       throw new Error(data.error ?? "Unable to start checkout");
     }
 
-    const { clientSecret } = data;
-    return clientSecret;
+    window.location.assign(data.url);
   }, [consent, items]);
+
+  useEffect(() => {
+    if (!items.length || redirecting.current) return;
+    redirecting.current = true;
+    beginCheckout().catch(() => {
+      redirecting.current = false;
+      setFailed(true);
+    });
+  }, [items.length, beginCheckout]);
 
   if (!items.length) {
     return (
@@ -81,12 +81,28 @@ export function CheckoutForm() {
       <div className="checkout-form">
         <Link className="checkout-back" href="/cart"><ArrowLeft size={15} /> Return to bag</Link>
         <header><span className="eyebrow">Secure checkout</span><h1>Almost <em>home.</em></h1></header>
-        {hasWelcomeCode && <p className="checkout-code-nudge">Have your VEYLO10 code? Add it in the promo field below.</p>}
-        <div className="checkout-embed">
-          <EmbeddedCheckoutProvider stripe={stripePromise} options={{ fetchClientSecret }}>
-            <EmbeddedCheckout />
-          </EmbeddedCheckoutProvider>
-        </div>
+        {failed ? (
+          <div className="checkout-handoff">
+            <p>We couldn&rsquo;t open the payment page. Check your connection and try again.</p>
+            <button
+              className="button button-primary"
+              onClick={() => {
+                setFailed(false);
+                redirecting.current = true;
+                beginCheckout().catch(() => {
+                  redirecting.current = false;
+                  setFailed(true);
+                });
+              }}
+            >
+              Try again
+            </button>
+          </div>
+        ) : (
+          <div className="checkout-handoff" role="status">
+            <p>Taking you to secure payment&hellip;</p>
+          </div>
+        )}
         <p className="checkout-reassurance">30-day money-back guarantee · dispatched within 48h · Stripe secure</p>
       </div>
     </div>

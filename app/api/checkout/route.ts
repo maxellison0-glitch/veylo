@@ -117,9 +117,10 @@ export async function POST(request: NextRequest) {
     ),
   );
 
+  // Hosted checkout: Stripe owns the whole viewport, which sidesteps the
+  // embedded iframe's unreliable sizing inside in-app mobile browsers.
   const session = await getStripe().checkout.sessions.create({
     integration_identifier: "veylo_checkout_kmtrpexa",
-    ui_mode: "embedded_page",
     mode: "payment",
     line_items: lineItems,
     shipping_address_collection: { allowed_countries: ["GB"] },
@@ -128,9 +129,10 @@ export async function POST(request: NextRequest) {
     // UK-only store: currency conversion adds a broken narrow-screen selector and a buyer FX fee.
     adaptive_pricing: { enabled: false },
     locale: "en-GB",
-    return_url: `${request.nextUrl.origin}/checkout/return?session_id={CHECKOUT_SESSION_ID}`,
+    success_url: `${request.nextUrl.origin}/checkout/return?session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `${request.nextUrl.origin}/cart`,
     metadata: trackingMetadata,
   });
 
-  return NextResponse.json({ clientSecret: session.client_secret });
+  return NextResponse.json({ url: session.url });
 }
