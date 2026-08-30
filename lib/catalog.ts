@@ -193,31 +193,68 @@ const existingProducts: Product[] = [
   {
     slug: "relief-belt",
     name: "The Relief Belt",
-    tagline: "Infrared body therapy",
+    tagline: "Red + near-infrared light",
     image: "https://d8j0ntlcm91z4.cloudfront.net/user_3DZsX8XjGmMqL9IN6t2ItqOSeH9/hf_20260824_144031_6bcddcea-237c-4692-ba62-e30c22c1fc68.png",
-    strapline: "120 LEDs of red and near-infrared light, wrapped around wherever it hurts.",
+    strapline: "Twenty quiet minutes for the places that carry the day.",
     description:
-      "A flexible therapy belt with 120 LEDs delivering 660nm red light and 850nm near-infrared. Wrap it around your back, knee, shoulder or hips for a twenty-minute session that leaves muscles feeling looser and joints less stiff.",
+      "Fasten the flexible 120-LED pad around your lower back, knee, shoulder or hip, press start and let the 20-minute timer finish while you wind down. £69.99 once — premium wearable-light devices currently start above £200. The difference is a simpler build: no app, no battery and no device to hold.",
     longDescription:
-      "The Relief Belt brings clinical-grade wavelengths into a wearable pad you can use on the sofa. One hundred and twenty LEDs alternate between 660nm red light and 850nm near-infrared, targeting both surface tissue and deeper muscle. The flexible pad wraps around the lower back, knee, shoulder or hip with a secure velcro strap, so you can move gently while it works. Twenty minutes a day is all it takes. The belt plugs in via a UK three-pin plug — no batteries to charge — and weighs just 500g.",
+      "The Relief Belt is built around The Sofa Session: one flexible pad, one strap and one automatic 20-minute finish. The pad keeps 660nm red and 850nm near-infrared light close and steady while you read, watch television or settle in after work or training. Mains power keeps it socket-side; it also removes charging and battery ageing. This is an everyday comfort and wellbeing ritual, not a medical device or a replacement for professional advice.",
     howTo:
-      "Place the belt against the area you want to treat — lower back, knee, shoulder or hip. Secure the velcro strap so the LEDs sit flat against the skin or thin clothing. Plug in and switch on. Relax for twenty minutes; the belt switches itself off. Use daily or as needed.",
-    specs: "120 LEDs (660nm + 850nm). 28 × 19 × 6cm. 500g. UK three-pin plug. Velcro strap, one size. 20-minute auto timer.",
+      "Place the LED side against clean, dry skin on the lower back, knee, shoulder or hip. Secure the strap so the pad sits flat and comfortably, not tightly. Plug it into a UK socket and switch on, then sit or recline safely within the cable's reach. The timer stops after 20 minutes. Stop if the skin feels uncomfortable, and follow the supplied guidance before repeat use.",
+    specs: "120 LEDs specified at 660nm red + 850nm near-infrared. 28 × 19 × 6cm. 500g. UK three-pin plug. Adjustable Velcro strap. 20-minute auto-off timer. Mains powered; not cordless.",
     price: 69.99,
-    badge: "Bestseller",
-    concern: "Pain relief",
+    badge: "20-minute ritual",
+    concern: "Recovery",
     ptype: "Device",
     finishes: [{ name: "Charcoal", hex: "#2d2d2d" }],
     variants: [{ label: "Relief Belt", note: "UK plug, 20-min auto timer", price: 69.99 }],
     features: [
-      "120 LEDs — 660nm red + 850nm near-infrared",
-      "Flexible wrap for back, knee, shoulder, hip",
+      "120 LEDs specified at 660nm red + 850nm near-infrared",
+      "Flexible pad for lower back, knee, shoulder or hip",
       "20-minute auto-off timer",
-      "UK three-pin plug — no charging",
-      "Lightweight at 500g",
-      "Velcro strap, one size fits all",
+      "UK three-pin mains power — no battery or charging",
+      "500g pad",
+      "Adjustable Velcro strap",
     ],
     leadTime: standardLeadTime,
+    technology: [
+      "660nm red light is visible; 850nm near-infrared is much less visible to the eye, so the two wavelengths may not look equally bright.",
+      "The flexible pad and strap hold the LED surface close and steady around the selected area without a handheld device.",
+      "The automatic timer creates a fixed 20-minute session. The Relief Belt is comfort and wellbeing technology, not a medical device.",
+    ],
+    useCases: [
+      "An end-of-day sofa routine",
+      "A quiet pause after training or long hours sitting or standing",
+      "Targeted light around the lower back, knee, shoulder or hip",
+    ],
+    faqs: [
+      {
+        question: "What does the Relief Belt promise?",
+        answer:
+          "A targeted red and near-infrared light routine in a flexible, hands-free 20-minute format. Veylo does not promise a medical outcome or position the belt as a replacement for professional care.",
+      },
+      {
+        question: "Why is it mains powered rather than cordless?",
+        answer:
+          "The cable means using it safely near a UK socket rather than walking around in it. The trade-off is deliberate: there is no battery to charge, age or replace, so the belt is ready whenever it is plugged in.",
+      },
+      {
+        question: "Why does it cost less than premium wearable-light devices?",
+        answer:
+          "Premium wearable-light products researched in August 2026 started above £200 and added features such as rechargeable batteries, apps, vibration, heating systems or laser modules. The Relief Belt is £69.99 because it is narrower and simpler: a dual-wavelength LED pad, an adjustable strap and an automatic timer.",
+      },
+      {
+        question: "Is the Relief Belt suitable for everyone?",
+        answer:
+          "No device is suitable for every person or condition. Avoid broken or irritated skin, and ask a qualified healthcare professional before use if you are pregnant, have an implanted electronic device, take photosensitising medication or are unsure whether light-based technology is appropriate for you.",
+      },
+      {
+        question: "What if it is not right for me?",
+        answer:
+          "Veylo's 30-day returns terms apply. Read the returns page before opening any hygiene-sealed components, and contact us before ordering if you are unsure about fit or suitability.",
+      },
+    ],
   },
   {
     slug: "relief-ritual",
