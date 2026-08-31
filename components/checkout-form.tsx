@@ -103,7 +103,7 @@ export function CheckoutForm() {
             <p>Taking you to secure payment&hellip;</p>
           </div>
         )}
-        <p className="checkout-reassurance">30-day money-back guarantee · dispatched within 48h · Stripe secure</p>
+        <p className="checkout-reassurance">30-day money-back guarantee · UK delivery 7–14 days · Stripe secure</p>
       </div>
     </div>
   );

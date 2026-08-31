@@ -1,7 +1,7 @@
 import { Headphones, Lock, RotateCcw, Truck } from "lucide-react";
 
 const promises = [
-  { icon: Truck, title: "Tracked UK delivery", copy: "Free over £40, dispatched within 48 hours" },
+  { icon: Truck, title: "Tracked UK delivery", copy: "Free over £40, arrives in 7–14 days" },
   { icon: RotateCcw, title: "30-day money-back guarantee", copy: "Not for you? Send it back within 30 days" },
   { icon: Lock, title: "Secure Stripe checkout", copy: "Card details never touch our servers" },
   { icon: Headphones, title: "UK-based support", copy: "Real replies within two working days" },

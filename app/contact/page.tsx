@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const faqs = [
-  ["How long will my order take?", "We dispatch within 24–48 hours, Monday to Friday. Tracked UK delivery then takes 4–7 working days. We email tracking as soon as your order ships."],
+  ["How long will my order take?", "Tracked UK delivery takes 7–14 days from the day you order. We email you tracking as soon as your parcel is on its way."],
   ["How often should I use the Veylo Wand?", "Five minutes a day on clean, dry skin, followed by your usual serum or moisturiser. The included ritual guide walks through each area of the face."],
   ["Can I return a device if it is not for me?", "Yes. Every order carries a 30-day money-back guarantee. Items need to be unused and in a hygienic condition with their original packaging. Email us to start a return."],
   ["Are Veylo devices suitable for sensitive skin?", "Our tools use gentle, established technologies and most people find them comfortable. Patch test on the inner forearm first, avoid broken skin, and stop if irritation appears. If you have a skin condition or are unsure, speak to your GP or pharmacist before use."],

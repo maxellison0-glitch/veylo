@@ -53,7 +53,7 @@ const blush: Finish = { name: "Blush", hex: "#e6c3b8" };
 const frost: Finish = { name: "Frost", hex: "#dbe4e4" };
 const stone: Finish = { name: "Stone", hex: "#cfc8bf" };
 
-const standardLeadTime = "Dispatched within 48 hours, fully tracked";
+const standardLeadTime = "UK delivery in 7–14 days, fully tracked";
 
 const existingProducts: Product[] = [
   {

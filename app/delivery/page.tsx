@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Delivery Policy",
-  description: "Delivery information for Veylo orders: tracked UK delivery in 4–7 working days, dispatch within 24–48 hours, free over £40.",
+  description: "Delivery information for Veylo orders: tracked UK delivery in 7–14 days, free over £40.",
   alternates: { canonical: "/delivery" },
 };
 
@@ -22,12 +22,12 @@ export default function DeliveryPage() {
 
         <section>
           <h2>2. Dispatch</h2>
-          <p>Orders are dispatched within 24&ndash;48 hours, Monday to Friday. Orders placed over the weekend are dispatched at the start of the following week. We will email you when your order ships, with tracking.</p>
+          <p>We begin processing your order within 24 hours of payment, Monday to Friday. Orders placed over the weekend are processed at the start of the following week. We will email you when your parcel is on its way, with tracking.</p>
         </section>
 
         <section>
           <h2>3. Delivery timescales</h2>
-          <p>Tracked UK delivery takes 4&ndash;7 working days from dispatch.</p>
+          <p>Tracked UK delivery takes 7&ndash;14 days from the day you place your order. Most orders arrive towards the earlier end of that window, but we quote the full range so you are never waiting on a promise we did not make.</p>
           <p>Orders containing more than one item may arrive in separate packages on different days.</p>
           <p>These timescales are estimates and not guaranteed. Delays may occur due to high demand, carrier issues or circumstances beyond our control. We will contact you if there is a significant delay.</p>
         </section>
