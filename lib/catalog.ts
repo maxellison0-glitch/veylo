@@ -44,8 +44,13 @@ export type Product = {
    * has given their words. Never fabricate one, and never make a claim here
    * that Veylo could not make in its own copy - a testimonial does not license
    * a claim the brand is not allowed to make.
+   *
+   * `note` is only for disclosing a material connection - a gifted unit, a
+   * paid partnership. Where the reviewer bought the product themselves no
+   * disclosure is required and none should be invented, since a disclaimer
+   * nobody asked for reads as defensive and costs trust.
    */
-  testimonial?: { quote: string; attribution: string; note: string };
+  testimonial?: { quote: string; attribution: string; note?: string };
 };
 
 const pearl: Finish = { name: "Pearl", hex: "#f0eae2" };
@@ -218,7 +223,6 @@ const existingProducts: Product[] = [
       quote:
         "It is portable, easy to use, and above all, great value for money. I use it daily.",
       attribution: "Jess",
-      note: "Tested the Relief Belt. Shared with permission.",
     },
     finishes: [{ name: "Charcoal", hex: "#2d2d2d" }],
     variants: [{ label: "Relief Belt", note: "UK plug, 20-min auto timer", price: 69.99 }],

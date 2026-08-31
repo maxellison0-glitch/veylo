@@ -75,7 +75,7 @@ export function ProductPurchase({ product }: { product: Product }) {
             <blockquote>{product.testimonial.quote}</blockquote>
             <figcaption>
               <strong>{product.testimonial.attribution}</strong>
-              <span>{product.testimonial.note}</span>
+              {product.testimonial.note && <span>{product.testimonial.note}</span>}
             </figcaption>
           </figure>
         )}
