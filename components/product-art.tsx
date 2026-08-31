@@ -56,20 +56,16 @@ const productImages: Record<string, string[]> = {
   // the neck/evening shots as secondary proof that the pad wraps other areas.
   "relief-belt": [
     "/products/relief-belt-knee.jpg",
-    `${CDN}/hf_20260824_144031_6bcddcea-237c-4692-ba62-e30c22c1fc68.png`,
-    "/products/couples-relief-pair.png",
-    `${CDN}/hf_20260824_185851_bee8c1f7-3a13-4109-8680-3ec711b604dc.png`,
-    `${CDN}/hf_20260824_185850_cef3199c-3ba7-4389-b21e-2053cc38f10e.png`,
+    "/products/relief-belt-studio.jpg",
+    "/products/couples-relief-pair.jpg",
   ],
   "relief-ritual": [
     "/products/relief-ritual.png",
-    `${CDN}/hf_20260824_184915_efa8ab87-a0be-4312-89bb-46ac8a09f393.png`,
-    `${CDN}/hf_20260824_185851_bee8c1f7-3a13-4109-8680-3ec711b604dc.png`,
+    "/products/relief-belt-studio.jpg",
   ],
   "relief-duo": [
-    "/products/couples-relief-pair.png",
-    `${CDN}/hf_20260824_185851_bee8c1f7-3a13-4109-8680-3ec711b604dc.png`,
-    `${CDN}/hf_20260824_185850_cef3199c-3ba7-4389-b21e-2053cc38f10e.png`,
+    "/products/couples-relief-pair.jpg",
+    "/products/relief-belt-studio.jpg",
   ],
   "ipl-hair-removal": [
     "/products/ipl-ice-pro.png",
@@ -96,11 +92,9 @@ const productImages: Record<string, string[]> = {
  */
 const productImageAlts: Record<string, string[]> = {
   "relief-belt": [
-    "The Relief Belt wrapped around a woman's knee, its red LEDs lit, during a home workout",
-    "The Relief Belt laid flat, showing the charcoal pad and its grid of red LEDs",
-    "Two people on a sofa, one wearing the Relief Belt on the lower back and one on the neck",
-    "Close-up of the Relief Belt fastened around a neck and shoulders",
-    "A woman relaxing with the Relief Belt around her neck",
+    "The Relief Belt wrapped around a woman's knee with its red LEDs lit, its power lead running to an inline controller on the floor",
+    "The Relief Belt laid flat, showing the LED panel, velcro strap, power lead and inline controller",
+    "Two people on a sofa, one wearing the Relief Belt on the lower back and one on the neck, each plugged in",
   ],
 };
 

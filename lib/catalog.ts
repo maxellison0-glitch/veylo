@@ -312,7 +312,7 @@ const existingProducts: Product[] = [
     slug: "relief-duo",
     name: "Couples Relief Pair",
     tagline: "Two belts, one ritual",
-    image: "/products/couples-relief-pair.png",
+    image: "/products/couples-relief-pair.jpg",
     strapline: "Two Relief Belts — one for you, one for them. Recovery is better together.",
     description:
       "Two Relief Belts at one price. The same 120-LED infrared therapy, now for both of you. Settle onto the sofa, press start, and spend twenty minutes recovering together. Save £19.99 against buying separately.",
