@@ -90,6 +90,25 @@ const productImages: Record<string, string[]> = {
   ],
 };
 
+/**
+ * Per-image alt text. Without this every gallery image announces the same
+ * product name, which tells a screen reader nothing about what changed.
+ */
+const productImageAlts: Record<string, string[]> = {
+  "relief-belt": [
+    "The Relief Belt wrapped around a woman's knee, its red LEDs lit, during a home workout",
+    "The Relief Belt laid flat, showing the charcoal pad and its grid of red LEDs",
+    "Two people on a sofa, one wearing the Relief Belt on the lower back and one on the neck",
+    "Close-up of the Relief Belt fastened around a neck and shoulders",
+    "A woman relaxing with the Relief Belt around her neck",
+  ],
+};
+
+/** Alt text for a specific gallery image, falling back to the product name. */
+export function getProductImageAlt(slug: string, index: number, name: string): string {
+  return productImageAlts[slug]?.[index] ?? name;
+}
+
 /** Get a specific image URL for a product. */
 export function getProductImage(slug: string, index: number): string {
   const images = productImages[slug];

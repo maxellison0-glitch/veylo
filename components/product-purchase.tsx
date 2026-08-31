@@ -6,7 +6,7 @@ import { formatPrice, type Product } from "@/lib/catalog";
 import { trackViewContent } from "@/lib/tracking";
 import { useCookieConsent } from "./cookie-consent";
 import { PaymentLogos } from "./payment-logos";
-import { ProductImage, getProductImageCount } from "./product-art";
+import { ProductImage, getProductImageAlt, getProductImageCount } from "./product-art";
 import { useStore } from "./store-provider";
 
 export function ProductPurchase({ product }: { product: Product }) {
@@ -50,13 +50,13 @@ export function ProductPurchase({ product }: { product: Product }) {
       <div className="product-gallery">
         <div className={`product-main-view gallery-view-${view}`}>
           {product.badge && <span className="product-badge">{product.badge}</span>}
-          <ProductImage slug={product.slug} name={product.name} imageIndex={view} finish={finish.hex} alt={`${product.name} in ${finish.name}`} sizes="(max-width: 800px) 100vw, 55vw" priority={view === 0} />
+          <ProductImage slug={product.slug} name={product.name} imageIndex={view} finish={finish.hex} alt={getProductImageAlt(product.slug, view, product.name)} sizes="(max-width: 800px) 100vw, 55vw" priority={view === 0} />
           <span className="gallery-view-label">0{view + 1} / 0{imageCount}</span>
         </div>
         <div className="gallery-thumbnails">
           {Array.from({ length: imageCount }, (_, i) => i).map((item) => (
             <button className={view === item ? "is-selected" : ""} key={item} onClick={() => setView(item)} aria-label={`View product image ${item + 1}`}>
-              <ProductImage slug={product.slug} name={product.name} imageIndex={item} finish={finish.hex} sizes="120px" />
+              <ProductImage slug={product.slug} name={product.name} imageIndex={item} finish={finish.hex} alt={getProductImageAlt(product.slug, item, product.name)} sizes="120px" />
             </button>
           ))}
         </div>

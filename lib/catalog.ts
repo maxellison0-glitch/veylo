@@ -211,7 +211,7 @@ const existingProducts: Product[] = [
     image: "https://www.veyloskin.com/products/relief-belt-knee.jpg",
     strapline: "Twenty quiet minutes for the places that carry the day.",
     description:
-      "Fasten the flexible 120-LED pad around your lower back, knee, shoulder or hip, press start and let the 20-minute timer finish while you wind down. £69.99 once — premium wearable-light devices currently start above £200. The difference is a simpler build: no app, no battery and no device to hold.",
+      "Fasten the flexible 120-LED pad around your lower back, knee, shoulder or hip, press start and let the 20-minute timer finish while you wind down. It plugs into a UK socket and stays plugged in — there is no battery to charge, age or replace. £69.99 once, against premium wearable-light devices that currently start above £200.",
     longDescription:
       "The Relief Belt is built around The Sofa Session: one flexible pad, one strap and one automatic 20-minute finish. The pad keeps 660nm red and 850nm near-infrared light close and steady while you read, watch television or settle in after work or training. Mains power keeps it socket-side; it also removes charging and battery ageing. This is an everyday comfort and wellbeing ritual, not a medical device or a replacement for professional advice.",
     howTo:
