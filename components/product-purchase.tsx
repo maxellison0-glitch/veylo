@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, Heart, Minus, Plus, Truck } from "lucide-react";
+import { Check, Heart, Minus, Plus, Star, Truck } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { formatPrice, type Product } from "@/lib/catalog";
 import { trackViewContent } from "@/lib/tracking";
@@ -72,6 +72,13 @@ export function ProductPurchase({ product }: { product: Product }) {
 
         {product.testimonial && (
           <figure className="product-testimonial">
+            {product.testimonial.rating !== undefined && (
+              <div className="testimonial-rating" aria-label={`${product.testimonial.rating} out of 5`}>
+                {Array.from({ length: product.testimonial.rating }, (_, i) => (
+                  <Star key={i} size={14} fill="currentColor" strokeWidth={0} />
+                ))}
+              </div>
+            )}
             <blockquote>{product.testimonial.quote}</blockquote>
             <figcaption>
               <strong>{product.testimonial.attribution}</strong>
@@ -84,7 +91,7 @@ export function ProductPurchase({ product }: { product: Product }) {
           <div className="variant-label"><legend>1. Choose your option</legend></div>
           <div className="size-options">
             {product.variants.map((option) => (
-              <button className={variant.label === option.label ? "is-selected" : ""} key={option.label} onClick={() => setVariant(option)}>
+              <button className={variant.label === option.label ? "is-selected" : ""} key={option.label} onClick={() => { setVariant(option); if (option.previewImageIndex !== undefined) setView(option.previewImageIndex); }}>
                 <span>{option.label}</span><small>{option.note}</small><strong>{formatPrice(option.price)}</strong>
               </button>
             ))}

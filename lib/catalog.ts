@@ -7,6 +7,8 @@ export type Variant = {
   label: string;
   note: string;
   price: number;
+  /** Gallery image to jump to when this variant is picked. */
+  previewImageIndex?: number;
 };
 
 export type ProductCollection = "Face" | "Body" | "Scalp & Hair" | "Bundles";
@@ -50,7 +52,7 @@ export type Product = {
    * disclosure is required and none should be invented, since a disclaimer
    * nobody asked for reads as defensive and costs trust.
    */
-  testimonial?: { quote: string; attribution: string; note?: string };
+  testimonial?: { quote: string; attribution: string; note?: string; rating?: number };
 };
 
 const pearl: Finish = { name: "Pearl", hex: "#f0eae2" };
@@ -223,9 +225,13 @@ const existingProducts: Product[] = [
       quote:
         "It is portable, easy to use, and above all, great value for money. I use it daily.",
       attribution: "Jess",
+      rating: 5,
     },
     finishes: [{ name: "Charcoal", hex: "#2d2d2d" }],
-    variants: [{ label: "Relief Belt", note: "UK plug, 20-min auto timer", price: 69.99 }],
+    variants: [
+      { label: "One belt", note: "UK plug, 20-min auto timer", price: 69.99, previewImageIndex: 0 },
+      { label: "Two belts — Relief Duo", note: "One each · save £19.99", price: 119.99, previewImageIndex: 2 },
+    ],
     features: [
       "120 LEDs specified at 660nm red + 850nm near-infrared",
       "Flexible pad for lower back, knee, shoulder or hip",

@@ -262,6 +262,7 @@ img { max-width: 100%; }
 .detail-price s { color: var(--muted); font-size: 13px; }.detail-price strong { font-size: 20px; }.detail-price span { color: var(--muted); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; }
 .product-description { max-width: 580px; color: var(--muted); font-size: 14px; }
 .product-testimonial { max-width: 580px; margin: 22px 0 0; border-left: 2px solid var(--clay); padding: 2px 0 2px 16px; }
+.testimonial-rating { display: inline-flex; gap: 2px; margin-bottom: 8px; color: var(--clay); }
 .product-testimonial blockquote { margin: 0; color: var(--ink); font-family: var(--font-display); font-size: 17px; font-style: italic; line-height: 1.5; }
 .product-testimonial figcaption { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; margin-top: 10px; }
 .product-testimonial figcaption strong { color: var(--ink); font-size: 12px; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; }
