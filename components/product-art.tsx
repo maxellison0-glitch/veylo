@@ -51,7 +51,11 @@ const productImages: Record<string, string[]> = {
     `${CDN}/hf_20260824_184915_8add347d-ec7c-4d7e-bef0-12d46b6e969d.png`,
     `${CDN}/hf_20260824_184915_3f87370f-7ecc-4c3e-a57f-7e997192c460.png`,
   ],
+  // Hero is the exact image used in the live Meta ad (knee, home gym) so the
+  // landing page matches what the visitor clicked. Product detail second, then
+  // the neck/evening shots as secondary proof that the pad wraps other areas.
   "relief-belt": [
+    "/products/relief-belt-knee.jpg",
     `${CDN}/hf_20260824_144031_6bcddcea-237c-4692-ba62-e30c22c1fc68.png`,
     `${CDN}/hf_20260824_185851_bee8c1f7-3a13-4109-8680-3ec711b604dc.png`,
     `${CDN}/hf_20260824_185850_cef3199c-3ba7-4389-b21e-2053cc38f10e.png`,

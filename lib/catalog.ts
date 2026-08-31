@@ -194,7 +194,7 @@ const existingProducts: Product[] = [
     slug: "relief-belt",
     name: "The Relief Belt",
     tagline: "Red + near-infrared light",
-    image: "https://d8j0ntlcm91z4.cloudfront.net/user_3DZsX8XjGmMqL9IN6t2ItqOSeH9/hf_20260824_144031_6bcddcea-237c-4692-ba62-e30c22c1fc68.png",
+    image: "https://www.veyloskin.com/products/relief-belt-knee.jpg",
     strapline: "Twenty quiet minutes for the places that carry the day.",
     description:
       "Fasten the flexible 120-LED pad around your lower back, knee, shoulder or hip, press start and let the 20-minute timer finish while you wind down. £69.99 once — premium wearable-light devices currently start above £200. The difference is a simpler build: no app, no battery and no device to hold.",
