@@ -39,6 +39,13 @@ export type Product = {
   technology?: string[];
   useCases?: string[];
   faqs?: ProductFaq[];
+  /**
+   * A single real, unpaid tester quote. Only set this where a genuine person
+   * has given their words. Never fabricate one, and never make a claim here
+   * that Veylo could not make in its own copy - a testimonial does not license
+   * a claim the brand is not allowed to make.
+   */
+  testimonial?: { quote: string; attribution: string; note: string };
 };
 
 const pearl: Finish = { name: "Pearl", hex: "#f0eae2" };
@@ -207,6 +214,12 @@ const existingProducts: Product[] = [
     badge: "20-minute ritual",
     concern: "Recovery",
     ptype: "Device",
+    testimonial: {
+      quote:
+        "It is portable, easy to use, and above all, great value for money. I use it daily.",
+      attribution: "Jess",
+      note: "Tested the Relief Belt. Shared with permission.",
+    },
     finishes: [{ name: "Charcoal", hex: "#2d2d2d" }],
     variants: [{ label: "Relief Belt", note: "UK plug, 20-min auto timer", price: 69.99 }],
     features: [

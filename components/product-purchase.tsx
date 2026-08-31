@@ -70,6 +70,16 @@ export function ProductPurchase({ product }: { product: Product }) {
         <div className="detail-price">{product.previousPrice && <s>{formatPrice(product.previousPrice)}</s>}<strong>{formatPrice(variant.price)}</strong><span>free UK delivery over £40</span></div>
         <p className="product-description">{product.description}</p>
 
+        {product.testimonial && (
+          <figure className="product-testimonial">
+            <blockquote>{product.testimonial.quote}</blockquote>
+            <figcaption>
+              <strong>{product.testimonial.attribution}</strong>
+              <span>{product.testimonial.note}</span>
+            </figcaption>
+          </figure>
+        )}
+
         <fieldset className="variant-fieldset">
           <div className="variant-label"><legend>1. Choose your option</legend></div>
           <div className="size-options">
