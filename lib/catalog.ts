@@ -223,7 +223,7 @@ const existingProducts: Product[] = [
     ptype: "Device",
     testimonial: {
       quote:
-        "It is portable, easy to use, and above all, great value for money. I use it daily.",
+        "I love this red light therapy belt. It is easy to use, and above all, great value for money. I use it daily.",
       attribution: "Jess",
       rating: 5,
     },
